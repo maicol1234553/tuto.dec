@@ -234,7 +234,7 @@ public class inicio extends javax.swing.JFrame {
             contraseñatf.setForeground(Color.black);
         }
         if (usuariotf.getText().isEmpty()) {
-            usuariotf.setText("Ingrese su nombre de usuario");
+            usuariotf.setText("Ingrese su nombre de usuario, por favor");
             usuariotf.setForeground(Color.gray);
         }
     }//GEN-LAST:event_contraseñatfMousePressed
