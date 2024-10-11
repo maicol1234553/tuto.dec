@@ -36,8 +36,8 @@ public class opcion_registro extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -124,11 +124,11 @@ public class opcion_registro extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 300, 50));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inicio/alum.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 200, 210));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/alum.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 190, 200));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inicio/prof.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 200, 210));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/prof.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 210, 210));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -175,10 +175,10 @@ public class opcion_registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
