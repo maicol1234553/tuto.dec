@@ -24,7 +24,6 @@ public class inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         iniciarsesionjl = new javax.swing.JLabel();
         usuariojl = new javax.swing.JLabel();
         usuariotf = new javax.swing.JTextField();
@@ -39,18 +38,15 @@ public class inicio extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         salirjp = new javax.swing.JPanel();
         salirjl = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/OIP.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 310, 500));
 
         iniciarsesionjl.setFont(new java.awt.Font("Roboto Medium", 3, 36)); // NOI18N
         iniciarsesionjl.setText("INICIAR SESION ");
@@ -74,17 +70,17 @@ public class inicio extends javax.swing.JFrame {
                 usuariotfActionPerformed(evt);
             }
         });
-        jPanel1.add(usuariotf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 229, 437, 37));
+        jPanel1.add(usuariotf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 226, 360, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 272, 437, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 272, 360, 10));
 
         contraseñajl.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         contraseñajl.setText("CONTRASEÑA");
         jPanel1.add(contraseñajl, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 294, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 371, 440, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 371, 370, 10));
 
         contraseñatf.setForeground(new java.awt.Color(204, 204, 255));
         contraseñatf.setText("********");
@@ -94,10 +90,11 @@ public class inicio extends javax.swing.JFrame {
                 contraseñatfMousePressed(evt);
             }
         });
-        jPanel1.add(contraseñatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 322, 437, 43));
+        jPanel1.add(contraseñatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 325, 360, 40));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
 
+        ingresarjl.setBackground(new java.awt.Color(153, 153, 255));
         ingresarjl.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         ingresarjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ingresarjl.setText("INGRESAR");
@@ -112,18 +109,22 @@ public class inicio extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ingresarjl, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ingresarjl, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ingresarjl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ingresarjl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 405, -1, 42));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, 42));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 255));
 
-        registrarjl.setBackground(new java.awt.Color(255, 255, 255));
+        registrarjl.setBackground(new java.awt.Color(102, 102, 255));
         registrarjl.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         registrarjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         registrarjl.setText("REGISTRARSE");
@@ -138,14 +139,18 @@ public class inicio extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(registrarjl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(registrarjl, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(registrarjl, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(registrarjl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 405, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -207,6 +212,9 @@ public class inicio extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inicio/tu.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 370, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 500));
 
