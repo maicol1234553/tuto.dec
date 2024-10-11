@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.inicio;
 
 import java.awt.Color;
@@ -36,13 +33,9 @@ public class inicio extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         registrarjl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        salirjp = new javax.swing.JPanel();
-        salirjl = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
@@ -164,57 +157,21 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
-        salirjp.setBackground(new java.awt.Color(255, 255, 255));
-
-        salirjl.setBackground(new java.awt.Color(204, 204, 204));
-        salirjl.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        salirjl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        salirjl.setText("X");
-        salirjl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        salirjl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                salirjlMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                salirjlMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                salirjlMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout salirjpLayout = new javax.swing.GroupLayout(salirjp);
-        salirjp.setLayout(salirjpLayout);
-        salirjpLayout.setHorizontalGroup(
-            salirjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(salirjpLayout.createSequentialGroup()
-                .addComponent(salirjl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        salirjpLayout.setVerticalGroup(
-            salirjpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, salirjpLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(salirjl, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(salirjp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(866, Short.MAX_VALUE))
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(salirjp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 37, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inicio/tu.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 420, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/tu.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 410, 470));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 500));
 
@@ -249,6 +206,7 @@ public class inicio extends javax.swing.JFrame {
 
     private void ingresarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarjlMouseClicked
         String mensaje = "Intento de ingreso: " + usuariotf.getText() + "\nContraseña: " + String.valueOf(contraseñatf.getPassword());
+        JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_ingresarjlMouseClicked
 
     private void registrarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarjlMouseClicked
@@ -256,19 +214,10 @@ public class inicio extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_registrarjlMouseClicked
 
-    private void salirjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirjlMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_salirjlMouseClicked
-
-    private void salirjlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirjlMouseEntered
-        salirjp.setBackground(Color.red);
-        salirjp.setForeground(Color.white);
-    }//GEN-LAST:event_salirjlMouseEntered
-
-    private void salirjlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirjlMouseExited
-        salirjp.setBackground(Color.white);
-        salirjp.setForeground(Color.white);
-    }//GEN-LAST:event_salirjlMouseExited
+    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jPanel4MousePressed
 
     private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
         int x = evt.getXOnScreen();
@@ -276,46 +225,7 @@ public class inicio extends javax.swing.JFrame {
         this.setLocation(x - xMouse,y - yMouse );
     }//GEN-LAST:event_jPanel4MouseDragged
 
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-
-    }//GEN-LAST:event_jPanel4MousePressed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new inicio().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel contraseñajl;
@@ -330,8 +240,6 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel registrarjl;
-    private javax.swing.JLabel salirjl;
-    private javax.swing.JPanel salirjp;
     private javax.swing.JLabel usuariojl;
     private javax.swing.JTextField usuariotf;
     // End of variables declaration//GEN-END:variables
