@@ -17,6 +17,7 @@ public class main {
     private static final String USER = "root";  // Usuario de la base de datos
     private static final String PASSWORD = "12345";  // Contraseña de la base de datos
     private static Connection conexion = null;
+    
 
     public static void main(String[] args) {
 

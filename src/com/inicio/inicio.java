@@ -7,10 +7,13 @@ import javax.swing.JOptionPane;
 public class inicio extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    
     public inicio() {
+        
+        
         initComponents();
+        setLocationRelativeTo(null);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +37,8 @@ public class inicio extends javax.swing.JFrame {
         registrarjl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,7 +52,7 @@ public class inicio extends javax.swing.JFrame {
 
         usuariojl.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         usuariojl.setText("USUARIO");
-        jPanel1.add(usuariojl, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 189, -1, -1));
+        jPanel1.add(usuariojl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         usuariotf.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         usuariotf.setForeground(new java.awt.Color(204, 204, 204));
@@ -63,17 +68,17 @@ public class inicio extends javax.swing.JFrame {
                 usuariotfActionPerformed(evt);
             }
         });
-        jPanel1.add(usuariotf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 226, 360, 40));
+        jPanel1.add(usuariotf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 360, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 272, 360, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 360, 10));
 
         contraseñajl.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         contraseñajl.setText("CONTRASEÑA");
-        jPanel1.add(contraseñajl, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 294, -1, -1));
+        jPanel1.add(contraseñajl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 371, 370, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 360, 10));
 
         contraseñatf.setForeground(new java.awt.Color(204, 204, 255));
         contraseñatf.setText("********");
@@ -83,7 +88,7 @@ public class inicio extends javax.swing.JFrame {
                 contraseñatfMousePressed(evt);
             }
         });
-        jPanel1.add(contraseñatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 325, 360, 40));
+        jPanel1.add(contraseñatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 360, 40));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
 
@@ -173,6 +178,14 @@ public class inicio extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/tu.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 410, 470));
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PROFESOR", "ALUMNO" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 360, 30));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ROL");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 500));
 
         pack();
@@ -210,8 +223,11 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresarjlMouseClicked
 
     private void registrarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarjlMouseClicked
-        String mensaje = "Intento de registro: " + usuariotf.getText() + "\nContraseña: " + String.valueOf(contraseñatf.getPassword());
-        JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
+        opcion_registro registro = new opcion_registro();
+        registro.setVisible(true);
+        dispose();
+        
+
     }//GEN-LAST:event_registrarjlMouseClicked
 
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
@@ -232,7 +248,9 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JPasswordField contraseñatf;
     private javax.swing.JLabel ingresarjl;
     private javax.swing.JLabel iniciarsesionjl;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
