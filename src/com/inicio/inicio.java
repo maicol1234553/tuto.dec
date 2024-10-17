@@ -1,7 +1,10 @@
 
 package com.inicio;
 
+import java.sql.*;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class inicio extends javax.swing.JFrame {
@@ -203,7 +206,7 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_usuariotfMousePressed
 
     private void usuariotfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariotfActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_usuariotfActionPerformed
 
     private void contraseñatfMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contraseñatfMousePressed
@@ -218,8 +221,52 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_contraseñatfMousePressed
 
     private void ingresarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarjlMouseClicked
-        String mensaje = "Intento de ingreso: " + usuariotf.getText() + "\nContraseña: " + String.valueOf(contraseñatf.getPassword());
-        JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
+        
+            String mensaje = "Intento de ingreso: " + usuariotf.getText() + "\nContraseña: " + String.valueOf(contraseñatf.getPassword());
+            JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
+            
+            String user = usuariotf.getText();
+            char[] pass = contraseñatf.getPassword();
+            
+            //SELECT usuario, contrasena, privilegio from usuarios where usuario = 'mfroncancio';
+            String url = "SELECT usuario, contrasena, privilegio from "
+                    + "usuarios where usuario = '"+user+"'";
+        try {    
+            Connection con = conexion.obtenerconexion();
+            PreparedStatement ps = con.prepareStatement(url);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()){
+                //si existe el usuario
+                String u = rs.getString("usuario");
+                String p = rs.getString("contrasena");
+                String priv = rs.getString("privilegio");
+                
+                if(pass.equals(p)){
+                   // jframe alumno o docente 
+                   if (priv.equals("alumno")){
+                       alumno ventanaAlumno= new alumno();
+                       ventanaAlumno.setVisible(true);
+                        }else if (priv.equals("docente")){
+                            docente ventanaDocente = new docente ();
+                            ventanaDocente.setVisible(true);
+                        }
+                } else{
+                      JOptionPane.showMessageDialog(null,"LA CONTRASEÑA ES INCORRECTA");
+                      
+                      
+                }
+            }
+            else{
+                //el usuario no existe 
+                JOptionPane.showMessageDialog(null,"EL USUSARIO NO EXISTE");
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+       
+       
+       
     }//GEN-LAST:event_ingresarjlMouseClicked
 
     private void registrarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarjlMouseClicked
