@@ -1,6 +1,6 @@
 
 package com.inicio;
-
+import java.util.Arrays;
 import java.sql.*;
 import java.awt.Color;
 import java.util.logging.Level;
@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class inicio extends javax.swing.JFrame {
+    
 
     int xMouse, yMouse;
     
@@ -40,8 +41,6 @@ public class inicio extends javax.swing.JFrame {
         registrarjl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -181,14 +180,6 @@ public class inicio extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/tu.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 410, 470));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PROFESOR", "ALUMNO" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 360, 30));
-
-        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ROL");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 500));
 
         pack();
@@ -222,8 +213,6 @@ public class inicio extends javax.swing.JFrame {
 
     private void ingresarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarjlMouseClicked
         
-            String mensaje = "Intento de ingreso: " + usuariotf.getText() + "\nContraseña: " + String.valueOf(contraseñatf.getPassword());
-            JOptionPane.showMessageDialog(this, mensaje, "Login", JOptionPane.INFORMATION_MESSAGE);
             
             String user = usuariotf.getText();
             char[] pass = contraseñatf.getPassword();
@@ -242,12 +231,12 @@ public class inicio extends javax.swing.JFrame {
                 String p = rs.getString("contrasena");
                 String priv = rs.getString("privilegio");
                 
-                if(pass.equals(p)){
+                if(Arrays.equals(pass, p.toCharArray())){
                    // jframe alumno o docente 
                    if (priv.equals("alumno")){
                        alumno ventanaAlumno= new alumno();
                        ventanaAlumno.setVisible(true);
-                        }else if (priv.equals("docente")){
+                        }else if (priv.equals("profesor")){
                             docente ventanaDocente = new docente ();
                             ventanaDocente.setVisible(true);
                         }
@@ -287,6 +276,13 @@ public class inicio extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse,y - yMouse );
     }//GEN-LAST:event_jPanel4MouseDragged
+ public static void main(String[] args) {
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new inicio().setVisible(true);
+        }
+    });
+}
 
     
 
@@ -295,9 +291,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JPasswordField contraseñatf;
     private javax.swing.JLabel ingresarjl;
     private javax.swing.JLabel iniciarsesionjl;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
