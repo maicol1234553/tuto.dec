@@ -209,7 +209,8 @@ public class opcion_registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombresActionPerformed
-        // TODO add your handling code here:
+        String nombre = nombres.getText();
+        
     }//GEN-LAST:event_nombresActionPerformed
 
     private void contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaActionPerformed

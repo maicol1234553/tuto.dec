@@ -15,6 +15,7 @@ public class docente extends javax.swing.JFrame {
      */
     public docente() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**

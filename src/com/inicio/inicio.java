@@ -213,12 +213,11 @@ public class inicio extends javax.swing.JFrame {
 
     private void ingresarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarjlMouseClicked
         
-            
             String user = usuariotf.getText();
             char[] pass = contraseñatf.getPassword();
             
             //SELECT usuario, contrasena, privilegio from usuarios where usuario = 'mfroncancio';
-            String url = "SELECT usuario, contrasena, privilegio from "
+            String url = "SELECT usuario, nombre, contrasena, privilegio from "
                     + "usuarios where usuario = '"+user+"'";
         try {    
             Connection con = conexion.obtenerconexion();
@@ -230,15 +229,19 @@ public class inicio extends javax.swing.JFrame {
                 String u = rs.getString("usuario");
                 String p = rs.getString("contrasena");
                 String priv = rs.getString("privilegio");
+                String nombre = rs.getString("nombre");
                 
                 if(Arrays.equals(pass, p.toCharArray())){
                    // jframe alumno o docente 
                    if (priv.equals("alumno")){
-                       alumno ventanaAlumno= new alumno();
+                       alumno ventanaAlumno= new alumno(nombre);
                        ventanaAlumno.setVisible(true);
+                       this.setVisible(false);
+                       
                         }else if (priv.equals("profesor")){
                             docente ventanaDocente = new docente ();
                             ventanaDocente.setVisible(true);
+                            this.setVisible(false);
                         }
                 } else{
                       JOptionPane.showMessageDialog(null,"LA CONTRASEÑA ES INCORRECTA");
