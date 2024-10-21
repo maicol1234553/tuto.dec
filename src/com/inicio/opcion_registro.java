@@ -4,6 +4,13 @@
  */
 package com.inicio;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author maico
@@ -86,6 +93,30 @@ public class opcion_registro extends javax.swing.JFrame {
             }
         });
 
+        apellidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                apellidosActionPerformed(evt);
+            }
+        });
+
+        correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correoActionPerformed(evt);
+            }
+        });
+
+        cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cedulaActionPerformed(evt);
+            }
+        });
+
+        usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioActionPerformed(evt);
+            }
+        });
+
         contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contraseñaActionPerformed(evt);
@@ -94,6 +125,11 @@ public class opcion_registro extends javax.swing.JFrame {
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("REGISTRAR");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -123,7 +159,12 @@ public class opcion_registro extends javax.swing.JFrame {
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        privilegio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PROFESOR", "ALUMNO" }));
+        privilegio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "profesor", "alumno" }));
+        privilegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                privilegioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,13 +250,81 @@ public class opcion_registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombresActionPerformed
-        String nombre = nombres.getText();
+        
         
     }//GEN-LAST:event_nombresActionPerformed
 
     private void contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaActionPerformed
-        // TODO add your handling code here:
+       
+        
     }//GEN-LAST:event_contraseñaActionPerformed
+
+    private void apellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidosActionPerformed
+        
+      
+    }//GEN-LAST:event_apellidosActionPerformed
+
+    private void correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoActionPerformed
+        
+    }//GEN-LAST:event_correoActionPerformed
+
+    private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
+      
+    }//GEN-LAST:event_cedulaActionPerformed
+
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
+      
+    }//GEN-LAST:event_usuarioActionPerformed
+
+    private void privilegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_privilegioActionPerformed
+        
+    }//GEN-LAST:event_privilegioActionPerformed
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        // TODO add your handling code here:
+String nombre = nombres.getText();
+String contra = contraseña.getText();
+String apellido = apellidos.getText();
+String correos = correo.getText();
+String id = cedula.getText();
+String user = usuario.getText();
+String rol = (String) privilegio.getSelectedItem();
+
+// Consulta SQL para insertar datos
+String url = "INSERT INTO usuarios (cedula, nombre, apellido, privilegio, correo, usuario, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+try {    
+    Connection con = conexion.obtenerconexion(); // Obtener la conexión
+    PreparedStatement ps = con.prepareStatement(url); // Preparar la consulta
+
+    // Establecer los valores en el orden correcto
+    ps.setString(1, id);          // cedula
+    ps.setString(2, nombre);      // nombre
+    ps.setString(3, apellido);    // apellido
+    ps.setString(4, rol);    // privilegio (puedes cambiar esto si es dinámico)
+    ps.setString(5, correos);     // correo
+    ps.setString(6, user);        // usuario
+    ps.setString(7, contra);      // contrasena
+
+    // Ejecutar la inserción
+    int filasAfectadas = ps.executeUpdate();
+    
+    if (filasAfectadas > 0) {
+        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    } else {
+        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+    }
+
+    ps.close(); // Cerrar el PreparedStatement
+    con.close(); // Cerrar la conexión
+
+} catch (SQLException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+}
+
+        
+    }//GEN-LAST:event_jLabel15MouseClicked
 
     /**
      * @param args the command line arguments

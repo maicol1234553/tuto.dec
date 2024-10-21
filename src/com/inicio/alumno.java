@@ -16,8 +16,7 @@ public class alumno extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        System.out.println(nombre);
-        
+       
         
     }
     
@@ -311,39 +310,57 @@ public class alumno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void semestre1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre1MouseClicked
-        // TODO add your handling code here:
+       semestre1 sem1= new semestre1();
+       sem1.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre1MouseClicked
 
     private void semestre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre2MouseClicked
-        // TODO add your handling code here:
+        semestre2 sem2 = new semestre2 ();
+       sem2.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre2MouseClicked
 
     private void semestre3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre3MouseClicked
-        // TODO add your handling code here:
+        semestre3 sem3 = new semestre3();
+       sem3.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre3MouseClicked
 
     private void semestre4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre4MouseClicked
-        // TODO add your handling code here:
+        semestre4 sem4= new semestre4();
+       sem4.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre4MouseClicked
 
     private void semestre5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre5MouseClicked
-        // TODO add your handling code here:
+        semestre5 sem5= new semestre5();
+       sem5.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre5MouseClicked
 
     private void semestre6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre6MouseClicked
-        // TODO add your handling code here:
+      semestre6 sem6= new semestre6();
+       sem6.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre6MouseClicked
 
     private void semestre7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre7MouseClicked
-        // TODO add your handling code here:
+        semestre7 sem7= new semestre7();
+       sem7.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre7MouseClicked
 
     private void semestre8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre8MouseClicked
-        // TODO add your handling code here:
+        semestre8 sem8= new semestre8();
+       sem8.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre8MouseClicked
 
     private void semestre9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre9MouseClicked
-        // TODO add your handling code here:
+        semestre9 sem9= new semestre9();
+       sem9.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_semestre9MouseClicked
 
     /**
