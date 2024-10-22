@@ -239,7 +239,7 @@ public class inicio extends javax.swing.JFrame {
                        this.setVisible(false);
                        
                         }else if (priv.equals("profesor")){
-                            docente ventanaDocente = new docente (nombre);
+                            Materias ventanaDocente = new Materias (nombre);
                             ventanaDocente.setVisible(true);
                             this.setVisible(false);
                         }
