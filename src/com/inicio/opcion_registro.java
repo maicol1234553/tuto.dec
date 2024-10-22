@@ -291,7 +291,7 @@ String user = usuario.getText();
 String rol = (String) privilegio.getSelectedItem();
 
 // Consulta SQL para insertar datos
-String url = "INSERT INTO usuarios (cedula, nombre, apellido, privilegio, correo, usuario, contrasena) VALUES (?, ?, ?, ?, ?, ?, ?)";
+String url = "INSERT INTO registro (IdUsuario, nombreUsuario, apellidoUsuario, Rol, correoUsuario, Usuario, contraseñaUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 try {    
     Connection con = conexion.obtenerconexion(); // Obtener la conexión

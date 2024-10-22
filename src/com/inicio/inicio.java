@@ -217,8 +217,8 @@ public class inicio extends javax.swing.JFrame {
             char[] pass = contraseñatf.getPassword();
             
             //SELECT usuario, contrasena, privilegio from usuarios where usuario = 'mfroncancio';
-            String url = "SELECT usuario, nombre, contrasena, privilegio from "
-                    + "usuarios where usuario = '"+user+"'";
+            String url = "SELECT Usuario, nombreUsuario, contraseñaUsuario, Rol from "
+                    + "registro where Usuario = '"+user+"'";
         try {    
             Connection con = conexion.obtenerconexion();
             PreparedStatement ps = con.prepareStatement(url);
@@ -226,10 +226,10 @@ public class inicio extends javax.swing.JFrame {
             
             if (rs.next()){
                 //si existe el usuario
-                String u = rs.getString("usuario");
-                String p = rs.getString("contrasena");
-                String priv = rs.getString("privilegio");
-                String nombre = rs.getString("nombre");
+                String u = rs.getString("Usuario");
+                String p = rs.getString("contraseñaUsuario");
+                String priv = rs.getString("Rol");
+                String nombre = rs.getString("nombreUsuario");
                 
                 if(Arrays.equals(pass, p.toCharArray())){
                    // jframe alumno o docente 

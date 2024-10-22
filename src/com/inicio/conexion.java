@@ -22,7 +22,7 @@ public class conexion {
         }*/
        public static Connection obtenerconexion() {
         Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/tuto_dec"; // La URL de la base de datos
+        String url = "jdbc:mysql://localhost:3306/tutodec1"; // La URL de la base de datos
         String usuario = "root"; // El usuario de la base de datos
         String contraseña = "12345"; // La contraseña de la base de datos
 

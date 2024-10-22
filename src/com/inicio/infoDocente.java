@@ -9,11 +9,14 @@ package com.inicio;
  * @author maico
  */
 public class infoDocente extends javax.swing.JFrame {
-
+  
     private String materiastr;
     public infoDocente(String materiastr) {
+       
+        
         initComponents();
         this.materiastr = materiastr;
+         
         
         materia.setText(this.materiastr);
     }
