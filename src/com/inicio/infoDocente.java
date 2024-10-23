@@ -1,9 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.inicio;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -133,11 +133,44 @@ public class infoDocente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarMouseClicked
-      String materiaTexto = texto.getText(); 
-      if (materiaTexto.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "El campo de materia no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
-            return; // Salir si el campo está vacío
-        }
+       
+        
+  String materiaTexto = texto.getText(); 
+      
+if (materiaTexto.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "El campo de materia no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+    return; // Salir si el campo está vacío
+}else{
+
+// Consulta SQL para insertar datos
+String url = "INSERT INTO materias (nombreMateria, descripcionMateria) VALUES ( ?, ?)";
+
+try {    
+    Connection con = conexion.obtenerconexion(); // Obtener la conexión
+    PreparedStatement ps = con.prepareStatement(url); // Preparar la consulta
+
+    // Establecer los valores en el orden correcto
+    ps.setString(1, this.materiastr);          // nombre de la materia
+    ps.setString(2, materiaTexto);      // descripcion de la materia
+    
+    // Ejecutar la inserción
+    int filasAfectadas = ps.executeUpdate();
+    
+    if (filasAfectadas > 0) {
+        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    } else {
+        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+    }
+
+    ps.close(); // Cerrar el PreparedStatement
+    con.close(); // Cerrar la conexión
+
+} catch (SQLException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+}
+
+}  
     }//GEN-LAST:event_guardarMouseClicked
 
     
