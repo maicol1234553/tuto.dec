@@ -13,7 +13,7 @@ public class Materias extends javax.swing.JFrame {
     private String nombre;
     public Materias( String nombre) {
        this.nombre = nombre ; 
-       // maicol es gay
+       
        
        
         
