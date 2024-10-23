@@ -96,7 +96,7 @@ public class comentarios extends javax.swing.JFrame {
             }
         });
     }
-
+//knaxknskncksnckns
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
