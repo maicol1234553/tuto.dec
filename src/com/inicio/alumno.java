@@ -313,6 +313,7 @@ public class alumno extends javax.swing.JFrame {
        semestre1 sem1= new semestre1();
        sem1.setVisible(true);
        this.setVisible(false);
+       
     }//GEN-LAST:event_semestre1MouseClicked
 
     private void semestre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre2MouseClicked

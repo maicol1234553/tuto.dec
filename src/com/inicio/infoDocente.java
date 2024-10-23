@@ -11,15 +11,17 @@ import javax.swing.JOptionPane;
  * @author maico
  */
 public class infoDocente extends javax.swing.JFrame {
-  
+    private String nombre;
     private String materiastr;
-    public infoDocente(String materiastr) {
+    public infoDocente(String materiastr, String nombre) {
+        
        
         
         initComponents();
         this.materiastr = materiastr;
-         
+        this.nombre = nombre;
         
+        nombreL.setText(this.nombre);
         materia.setText(this.materiastr);
     }
     
@@ -28,7 +30,7 @@ public class infoDocente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        nombreL = new javax.swing.JLabel();
         materia = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         texto = new javax.swing.JTextArea();
@@ -41,7 +43,12 @@ public class infoDocente extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setText("jLabel1");
+        nombreL.setText("hola "+this.nombre);
+        nombreL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nombreLMouseClicked(evt);
+            }
+        });
 
         materia.setText("MATERIA");
 
@@ -87,11 +94,12 @@ public class infoDocente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(materia))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(materia))
+                    .addComponent(nombreL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
@@ -109,8 +117,8 @@ public class infoDocente extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addGap(38, 38, 38)
+                        .addComponent(nombreL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(materia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -173,18 +181,22 @@ try {
 }  
     }//GEN-LAST:event_guardarMouseClicked
 
+    private void nombreLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreLMouseClicked
+
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel guardar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel materia;
+    private javax.swing.JLabel nombreL;
     private javax.swing.JTextArea texto;
     // End of variables declaration//GEN-END:variables
 }

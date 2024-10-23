@@ -13,13 +13,12 @@ public class Materias extends javax.swing.JFrame {
     private String nombre;
     public Materias( String nombre) {
        this.nombre = nombre ; 
-       
-       
+          
        
         
         initComponents();
     }
-
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -193,8 +192,8 @@ public class Materias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        infoDocente info = new infoDocente("Algebra lineal");
-        info.setVisible(true);
+            infoDocente info = new infoDocente("Algebra lineal",this.nombre);
+            info.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     
