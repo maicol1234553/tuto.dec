@@ -239,7 +239,7 @@ try {
                 ventanaAlumno.setVisible(true);
                 this.setVisible(false);
             } else if (priv.equals("profesor")) {
-                Materias ventanaDocente = new Materias(nombre);
+                Materias ventanaDocente = new Materias(nombre,idUsuario);
                 ventanaDocente.setVisible(true);
                 this.setVisible(false);
             }

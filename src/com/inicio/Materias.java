@@ -9,10 +9,12 @@ package com.inicio;
  * @author maico
  */
 public class Materias extends javax.swing.JFrame {
-
+    private int idUsuario;
     private String nombre;
-    public Materias( String nombre) {
+    public Materias( String nombre, int idUsuario) {
        this.nombre = nombre ; 
+       this.idUsuario = idUsuario;
+       
           
        
         
@@ -701,7 +703,7 @@ public class Materias extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void algebralinealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_algebralinealMouseClicked
-        infoDocente info = new infoDocente("Algebra lineal",this.nombre);
+        infoDocente info = new infoDocente("Algebra lineal",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_algebralinealMouseClicked
 
@@ -726,27 +728,27 @@ public class Materias extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel56MouseClicked
 
     private void pensamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientoMouseClicked
-         infoDocente info = new infoDocente("Pensamiento algoritmico",this.nombre);
+         infoDocente info = new infoDocente("Pensamiento algoritmico",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_pensamientoMouseClicked
 
     private void fundamentoselectronicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentoselectronicaMouseClicked
-         infoDocente info = new infoDocente("Fundamentos de electronica",this.nombre);
+         infoDocente info = new infoDocente("Fundamentos de electronica",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_fundamentoselectronicaMouseClicked
 
     private void fundamentosingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentosingMouseClicked
-        infoDocente info = new infoDocente("Fundamnetos de ingenieria",this.nombre);
+        infoDocente info = new infoDocente("Fundamnetos de ingenieria",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_fundamentosingMouseClicked
 
     private void discretasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discretasMouseClicked
-         infoDocente info = new infoDocente("Matematicas discretas",this.nombre);
+         infoDocente info = new infoDocente("Matematicas discretas",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_discretasMouseClicked
 
     private void pensamientosistemicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientosistemicoMouseClicked
-        infoDocente info = new infoDocente("Pensamiento sistemico y automatizacion ",this.nombre);
+        infoDocente info = new infoDocente("Pensamiento sistemico y automatizacion ",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_pensamientosistemicoMouseClicked
 
