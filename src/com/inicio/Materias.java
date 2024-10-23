@@ -50,13 +50,13 @@ public class Materias extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
+        algebralineal = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        pensamiento = new javax.swing.JLabel();
+        fundamentoselectronica = new javax.swing.JLabel();
+        fundamentosing = new javax.swing.JLabel();
+        discretas = new javax.swing.JLabel();
+        pensamientosistemico = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -267,24 +267,49 @@ public class Materias extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel22.setText("Álgebra lineal");
-        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+        algebralineal.setText("Álgebra lineal");
+        algebralineal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel22MouseClicked(evt);
+                algebralinealMouseClicked(evt);
             }
         });
 
         jLabel23.setText("SEMESTRE 1");
 
-        jLabel24.setText("Pensamiento algorítmico");
+        pensamiento.setText("Pensamiento algorítmico");
+        pensamiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pensamientoMouseClicked(evt);
+            }
+        });
 
-        jLabel25.setText("Fundamentos de electrónica");
+        fundamentoselectronica.setText("Fundamentos de electrónica");
+        fundamentoselectronica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fundamentoselectronicaMouseClicked(evt);
+            }
+        });
 
-        jLabel26.setText("Fundamentos de ingeniería");
+        fundamentosing.setText("Fundamentos de ingeniería");
+        fundamentosing.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fundamentosingMouseClicked(evt);
+            }
+        });
 
-        jLabel27.setText("Matemáticas discretas");
+        discretas.setText("Matemáticas discretas");
+        discretas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                discretasMouseClicked(evt);
+            }
+        });
 
-        jLabel28.setText("Pensamiento sistémico y automatización");
+        pensamientosistemico.setText("Pensamiento sistémico y automatización");
+        pensamientosistemico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pensamientosistemicoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -294,12 +319,12 @@ public class Materias extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel28))
+                    .addComponent(algebralineal)
+                    .addComponent(pensamiento)
+                    .addComponent(fundamentoselectronica)
+                    .addComponent(fundamentosing)
+                    .addComponent(discretas)
+                    .addComponent(pensamientosistemico))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -308,17 +333,17 @@ public class Materias extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22)
+                .addComponent(algebralineal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
+                .addComponent(pensamiento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
+                .addComponent(fundamentoselectronica)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel26)
+                .addComponent(fundamentosing)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel27)
+                .addComponent(discretas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel28)
+                .addComponent(pensamientosistemico)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -675,10 +700,10 @@ public class Materias extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+    private void algebralinealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_algebralinealMouseClicked
         infoDocente info = new infoDocente("Algebra lineal",this.nombre);
         info.setVisible(true);
-    }//GEN-LAST:event_jLabel22MouseClicked
+    }//GEN-LAST:event_algebralinealMouseClicked
 
     private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
         // TODO add your handling code here:
@@ -700,9 +725,38 @@ public class Materias extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel56MouseClicked
 
+    private void pensamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientoMouseClicked
+         infoDocente info = new infoDocente("Pensamiento algoritmico",this.nombre);
+        info.setVisible(true);
+    }//GEN-LAST:event_pensamientoMouseClicked
+
+    private void fundamentoselectronicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentoselectronicaMouseClicked
+         infoDocente info = new infoDocente("Fundamentos de electronica",this.nombre);
+        info.setVisible(true);
+    }//GEN-LAST:event_fundamentoselectronicaMouseClicked
+
+    private void fundamentosingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentosingMouseClicked
+        infoDocente info = new infoDocente("Fundamnetos de ingenieria",this.nombre);
+        info.setVisible(true);
+    }//GEN-LAST:event_fundamentosingMouseClicked
+
+    private void discretasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discretasMouseClicked
+         infoDocente info = new infoDocente("Matematicas discretas",this.nombre);
+        info.setVisible(true);
+    }//GEN-LAST:event_discretasMouseClicked
+
+    private void pensamientosistemicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientosistemicoMouseClicked
+        infoDocente info = new infoDocente("Pensamiento sistemico y automatizacion ",this.nombre);
+        info.setVisible(true);
+    }//GEN-LAST:event_pensamientosistemicoMouseClicked
+
     
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel algebralineal;
+    private javax.swing.JLabel discretas;
+    private javax.swing.JLabel fundamentoselectronica;
+    private javax.swing.JLabel fundamentosing;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -717,13 +771,7 @@ public class Materias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -776,5 +824,7 @@ public class Materias extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel pensamiento;
+    private javax.swing.JLabel pensamientosistemico;
     // End of variables declaration//GEN-END:variables
 }

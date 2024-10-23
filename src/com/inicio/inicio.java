@@ -213,50 +213,46 @@ public class inicio extends javax.swing.JFrame {
 
     private void ingresarjlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarjlMouseClicked
         
-            String user = usuariotf.getText();
-            char[] pass = contraseñatf.getPassword();
-            
-            //SELECT usuario, contrasena, privilegio from usuarios where usuario = 'mfroncancio';
-            String url = "SELECT Usuario, nombreUsuario, contraseñaUsuario, Rol from "
-                    + "registro where Usuario = '"+user+"'";
-        try {    
-            Connection con = conexion.obtenerconexion();
-            PreparedStatement ps = con.prepareStatement(url);
-            ResultSet rs = ps.executeQuery();
-            
-            if (rs.next()){
-                //si existe el usuario
-                String u = rs.getString("Usuario");
-                String p = rs.getString("contraseñaUsuario");
-                String priv = rs.getString("Rol");
-                String nombre = rs.getString("nombreUsuario");
-                
-                if(Arrays.equals(pass, p.toCharArray())){
-                   // jframe alumno o docente 
-                   if (priv.equals("alumno")){
-                       alumno ventanaAlumno= new alumno(nombre);
-                       ventanaAlumno.setVisible(true);
-                       this.setVisible(false);
-                       
-                        }else if (priv.equals("profesor")){
-                            Materias ventanaDocente = new Materias (nombre);
-                            ventanaDocente.setVisible(true);
-                            this.setVisible(false);
-                        }
-                } else{
-                      JOptionPane.showMessageDialog(null,"LA CONTRASEÑA ES INCORRECTA");
-                      
-                      
-                }
+           String user = usuariotf.getText();
+char[] pass = contraseñatf.getPassword();
+
+// Incluye el campo 'id' autoincrementable en la consulta SQL
+String url = "SELECT id, Usuario, nombreUsuario, contraseñaUsuario, Rol FROM registro WHERE Usuario = '"+user+"'";
+
+try {    
+    Connection con = conexion.obtenerconexion();
+    PreparedStatement ps = con.prepareStatement(url);
+    ResultSet rs = ps.executeQuery();
+
+    if (rs.next()) {
+        // Si el usuario existe, obtenemos su 'id' autoincrementable
+        int idUsuario = rs.getInt("id");  // El id autoincrementable del usuario
+        String u = rs.getString("Usuario");
+        String p = rs.getString("contraseñaUsuario");
+        String priv = rs.getString("Rol");
+        String nombre = rs.getString("nombreUsuario");
+        
+        if (Arrays.equals(pass, p.toCharArray())) {
+            // Lógica para diferenciar entre alumnos y profesores
+            if (priv.equals("alumno")) {
+                alumno ventanaAlumno = new alumno(nombre,idUsuario);
+                ventanaAlumno.setVisible(true);
+                this.setVisible(false);
+            } else if (priv.equals("profesor")) {
+                Materias ventanaDocente = new Materias(nombre);
+                ventanaDocente.setVisible(true);
+                this.setVisible(false);
             }
-            else{
-                //el usuario no existe 
-                JOptionPane.showMessageDialog(null,"EL USUSARIO NO EXISTE");
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "LA CONTRASEÑA ES INCORRECTA");
         }
-       
+    } else {
+        // El usuario no existe
+        JOptionPane.showMessageDialog(null, "EL USUARIO NO EXISTE");
+    }
+} catch (SQLException ex) {
+    System.out.println(ex.toString());
+}
        
        
     }//GEN-LAST:event_ingresarjlMouseClicked
