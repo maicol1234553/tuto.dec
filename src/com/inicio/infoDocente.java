@@ -199,9 +199,7 @@ try {
             if (filasAfectadas > 0) {
                 JOptionPane.showMessageDialog(this, "Datos del profesor insertados correctamente.");
 
-                // Ahora puedes pasar el idUsuario a la siguiente ventana, ya que este id es el mismo que en la tabla profesor
-                InfoMateria materiainfo = new InfoMateria(this.materiastr, this.nombre, idUsuario);
-                materiainfo.setVisible(true);
+                
             } else {
                 JOptionPane.showMessageDialog(this, "No se insertaron datos.");
             }

@@ -904,7 +904,7 @@ public class Materias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        infoDocente info = new infoDocente("Calculo multivariado ",this.nombre,this.idUsuario);
+        InfoMateria info = new InfoMateria("Calculo multivariado ",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 

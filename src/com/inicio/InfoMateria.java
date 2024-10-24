@@ -158,7 +158,9 @@ if (materiaTexto.isEmpty()) {
                 // Cambiar idProfesor por id (de la tabla registro)
                 String urlMateriasProfesor = "INSERT INTO materias_profesor (idProfesor, idMateria) VALUES (?, ?)";
                 PreparedStatement psMateriasProfesor = con.prepareStatement(urlMateriasProfesor);
-               
+                
+                infoDocente infoDoc = new infoDocente(this.materiastr, this.nombre, idUsuario);
+               infoDoc.setVisible(true);
                 // Cambiar this.idProfesor por el id correspondiente
                 psMateriasProfesor.setInt(1, this.idUsuario); // Aquí asumo que 'this.id' es el ID del profesor correspondiente
                 psMateriasProfesor.setInt(2, idMateria); 
