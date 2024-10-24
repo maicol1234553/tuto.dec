@@ -182,6 +182,8 @@ try {
         if (count > 0) {
             // El profesor ya existe, muestra un mensaje o haz algo más
             JOptionPane.showMessageDialog(this, "El profesor ya está registrado.");
+            comentarios coment = new comentarios();
+            coment.setVisible(true);
         } else {
             // El profesor no existe, procede con la inserción
             PreparedStatement psInsertar = con.prepareStatement(url);
