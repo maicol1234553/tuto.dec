@@ -114,14 +114,39 @@ public class Materias extends javax.swing.JFrame {
         jLabel2.setText("SEMESTRE 4");
 
         jLabel3.setText("Estructuras de información");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("Fisica (electricidad y magnetismo)");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Arquitectura de computadores");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jLabel6.setText("Fundamentos administrativos");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         jLabel7.setText("Imgles II");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -162,16 +187,46 @@ public class Materias extends javax.swing.JFrame {
         jLabel8.setText("SEMESTRE 2");
 
         jLabel9.setText("Programación I");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         jLabel10.setText("Cálculo diferencial");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
 
         jLabel11.setText("Fisica I (Mecánica)");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Razonamiento argumentativo ");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
 
         jLabel13.setText("Estadística, probabilidad e inferencia");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
 
         jLabel14.setText("Comunicación y pensamiento crítico I");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -217,16 +272,46 @@ public class Materias extends javax.swing.JFrame {
         jLabel15.setText("SEMESTRE 3");
 
         jLabel16.setText("Programación II");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         jLabel17.setText("Cálculo integral");
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
 
         jLabel18.setText("ciudadania sel siglo XXI");
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
 
         jLabel19.setText("Física II (optica y ondas)");
+        jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel19MouseClicked(evt);
+            }
+        });
 
         jLabel20.setText("Ingles I");
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
 
         jLabel21.setText("Comunicación y pensamiento crítico II");
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -359,14 +444,39 @@ public class Materias extends javax.swing.JFrame {
         jLabel30.setText("SEMESTRE 5");
 
         jLabel31.setText("Ingenieria de software I");
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel31MouseClicked(evt);
+            }
+        });
 
         jLabel32.setText("Sistemas operativos");
+        jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel32MouseClicked(evt);
+            }
+        });
 
         jLabel33.setText("Sistemas de información");
+        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel33MouseClicked(evt);
+            }
+        });
 
         jLabel34.setText("Bases de datos ");
+        jLabel34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel34MouseClicked(evt);
+            }
+        });
 
         jLabel35.setText("Planeacion estrategica");
+        jLabel35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel35MouseClicked(evt);
+            }
+        });
 
         jLabel44.setText("Ingles III");
 
@@ -421,18 +531,53 @@ public class Materias extends javax.swing.JFrame {
         jLabel37.setText("SEMESTRE 6");
 
         jLabel38.setText("Ingenieria de software II");
+        jLabel38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel38MouseClicked(evt);
+            }
+        });
 
         jLabel39.setText("Comunicacion de datos ");
+        jLabel39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel39MouseClicked(evt);
+            }
+        });
 
         jLabel40.setText("Networking");
+        jLabel40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel40MouseClicked(evt);
+            }
+        });
 
         jLabel41.setText("Catedra generacion de XXI  ");
+        jLabel41.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel41MouseClicked(evt);
+            }
+        });
 
         jLabel42.setText("Emprendimiento");
+        jLabel42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel42MouseClicked(evt);
+            }
+        });
 
         jLabel43.setText("Ingles IV");
+        jLabel43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel43MouseClicked(evt);
+            }
+        });
 
         jLabel61.setText("Ciencia tecnologia e innovacion");
+        jLabel61.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel61MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -486,16 +631,46 @@ public class Materias extends javax.swing.JFrame {
         jLabel46.setText("SEMESTRE 7");
 
         jLabel47.setText("operativo");
+        jLabel47.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel47MouseClicked(evt);
+            }
+        });
 
         jLabel48.setText("Redes y comunicacion");
+        jLabel48.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel48MouseClicked(evt);
+            }
+        });
 
-        jLabel49.setText("ciemcia de datos ");
+        jLabel49.setText("ciencia de datos ");
+        jLabel49.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel49MouseClicked(evt);
+            }
+        });
 
         jLabel50.setText("Seguridad informatica");
+        jLabel50.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel50MouseClicked(evt);
+            }
+        });
 
         jLabel51.setText("Emprendimiento");
+        jLabel51.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel51MouseClicked(evt);
+            }
+        });
 
         jLabel62.setText("Ciencia tecnologia e innovacion");
+        jLabel62.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel62MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -548,10 +723,25 @@ public class Materias extends javax.swing.JFrame {
         jLabel53.setText("SEMESTRE 8");
 
         jLabel54.setText("lenguajes automatas");
+        jLabel54.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel54MouseClicked(evt);
+            }
+        });
 
         jLabel55.setText("profundizacion I");
+        jLabel55.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel55MouseClicked(evt);
+            }
+        });
 
         jLabel63.setText("Ciencia tecnologia e innovacion");
+        jLabel63.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel63MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -593,10 +783,25 @@ public class Materias extends javax.swing.JFrame {
         jLabel57.setText("SEMESTRE 9");
 
         jLabel58.setText("modelacion");
+        jLabel58.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel58MouseClicked(evt);
+            }
+        });
 
         jLabel59.setText("profundizacion Il");
+        jLabel59.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel59MouseClicked(evt);
+            }
+        });
 
         jLabel60.setText("Opcion de grado");
+        jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel60MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -663,7 +868,7 @@ public class Materias extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -699,7 +904,8 @@ public class Materias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
+        infoDocente info = new infoDocente("Calculo multivariado ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void algebralinealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_algebralinealMouseClicked
@@ -708,23 +914,28 @@ public class Materias extends javax.swing.JFrame {
     }//GEN-LAST:event_algebralinealMouseClicked
 
     private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
-        // TODO add your handling code here:
+        infoDocente info = new infoDocente("Ecuaciones diferenciales ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel29MouseClicked
 
     private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
-        // TODO add your handling code here:
+        infoDocente info = new infoDocente("Matematicas especiales ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel36MouseClicked
 
     private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
-        // TODO add your handling code here:
+        infoDocente info = new infoDocente("Analisis numerico ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel45MouseClicked
 
     private void jLabel52MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel52MouseClicked
-        // TODO add your handling code here:
+        infoDocente info = new infoDocente("Inteligencia artificial ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel52MouseClicked
 
     private void jLabel56MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel56MouseClicked
-        // TODO add your handling code here:
+        infoDocente info = new infoDocente("Gerencia ",this.nombre,this.idUsuario);
+        info.setVisible(true);
     }//GEN-LAST:event_jLabel56MouseClicked
 
     private void pensamientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientoMouseClicked
@@ -751,6 +962,211 @@ public class Materias extends javax.swing.JFrame {
         infoDocente info = new infoDocente("Pensamiento sistemico y automatizacion ",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_pensamientosistemicoMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        infoDocente info = new infoDocente("Calculo diferencial ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        infoDocente info = new infoDocente("Programación I ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        infoDocente info = new infoDocente("Razonamiento argumentativo ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        infoDocente info = new infoDocente("Física I (mecanica) ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        infoDocente info = new infoDocente("estadistica, probabilidad e inferencia ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        infoDocente info = new infoDocente("comunicacion y pensamiento critico I ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        infoDocente info = new infoDocente("Calculo integral ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        infoDocente info = new infoDocente("programacion II ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
+        infoDocente info = new infoDocente("Fisica II (Optica y ondas) ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel19MouseClicked
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        infoDocente info = new infoDocente("Ciudadania del siglo XXI ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        infoDocente info = new infoDocente("Ingles I ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+        infoDocente info = new infoDocente("Comunicacion y pensamiento critico II ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        infoDocente info = new infoDocente("Estructuras de informacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        infoDocente info = new infoDocente("Fisica III (mecanica y ondas) ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        infoDocente info = new infoDocente("Arquitectura de computadores ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        infoDocente info = new infoDocente("Fundamentos administrativos ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        infoDocente info = new infoDocente("Ingles  ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
+        infoDocente info = new infoDocente("Ingenieria de software I ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel31MouseClicked
+
+    private void jLabel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseClicked
+        infoDocente info = new infoDocente("Sistemas operativos ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel32MouseClicked
+
+    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
+        infoDocente info = new infoDocente("Sistemas de informacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel33MouseClicked
+
+    private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
+        infoDocente info = new infoDocente("Bases de datos ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel34MouseClicked
+
+    private void jLabel35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel35MouseClicked
+        infoDocente info = new infoDocente("Planeacion estrategica ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel35MouseClicked
+
+    private void jLabel38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MouseClicked
+        infoDocente info = new infoDocente("Ingenieria de software II ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel38MouseClicked
+
+    private void jLabel39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel39MouseClicked
+        infoDocente info = new infoDocente("Comunicacion de datos ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel39MouseClicked
+
+    private void jLabel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel40MouseClicked
+        infoDocente info = new infoDocente("Networking ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel40MouseClicked
+
+    private void jLabel41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel41MouseClicked
+        infoDocente info = new infoDocente("Catedra generacion siglo XXI ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel41MouseClicked
+
+    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
+        infoDocente info = new infoDocente("Ciencia, tecnologia e innovacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel61MouseClicked
+
+    private void jLabel42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel42MouseClicked
+        infoDocente info = new infoDocente("Emprendimiento ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel42MouseClicked
+
+    private void jLabel43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel43MouseClicked
+        infoDocente info = new infoDocente("Ingles IV ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel43MouseClicked
+
+    private void jLabel47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel47MouseClicked
+        infoDocente info = new infoDocente("Operativa ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel47MouseClicked
+
+    private void jLabel48MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel48MouseClicked
+        infoDocente info = new infoDocente("Redes y comunicacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel48MouseClicked
+
+    private void jLabel49MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel49MouseClicked
+        infoDocente info = new infoDocente("Ciencia de datos ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel49MouseClicked
+
+    private void jLabel50MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel50MouseClicked
+        infoDocente info = new infoDocente("Seguridad informatica ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel50MouseClicked
+
+    private void jLabel62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel62MouseClicked
+        infoDocente info = new infoDocente("Ciencia tecnologia e innovacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel62MouseClicked
+
+    private void jLabel51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel51MouseClicked
+        infoDocente info = new infoDocente("Emprendimiento ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel51MouseClicked
+
+    private void jLabel54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel54MouseClicked
+        infoDocente info = new infoDocente("Lenguajes automatas ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel54MouseClicked
+
+    private void jLabel55MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel55MouseClicked
+        infoDocente info = new infoDocente("Profundizacion I ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel55MouseClicked
+
+    private void jLabel63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MouseClicked
+        infoDocente info = new infoDocente("Ciencia tecnologia e innovacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel63MouseClicked
+
+    private void jLabel58MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel58MouseClicked
+        infoDocente info = new infoDocente("Modelacion ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel58MouseClicked
+
+    private void jLabel59MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseClicked
+        infoDocente info = new infoDocente("Profundizacion II ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel59MouseClicked
+
+    private void jLabel60MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseClicked
+        infoDocente info = new infoDocente("Opcion de grado ",this.nombre,this.idUsuario);
+        info.setVisible(true);
+    }//GEN-LAST:event_jLabel60MouseClicked
 
     
  
