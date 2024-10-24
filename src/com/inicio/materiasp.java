@@ -698,22 +698,22 @@ public class materiasp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calmultivariadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calmultivariadoMouseClicked
-        InfoMateria info = new InfoMateria("Calculo multivariado ",this.nombre,this.idUsuario);
+        infoDocente info = new infoDocente ("Calculo multivariado ",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_calmultivariadoMouseClicked
 
     private void algebralinealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_algebralinealMouseClicked
-        InfoMateria info = new InfoMateria("Algebra lineal ",this.nombre,this.idUsuario);
+        infoDocente info = new infoDocente ("algebra lineal",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_algebralinealMouseClicked
 
     private void pensamientoalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientoalMouseClicked
-        InfoMateria info = new InfoMateria("Pensamiento algoritmico ",this.nombre,this.idUsuario);
+       infoDocente info = new infoDocente ("Pensamiento algoritmico",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_pensamientoalMouseClicked
 
     private void fundamentoselectronicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentoselectronicaMouseClicked
-        InfoMateria info = new InfoMateria("Fundamrntos de electronica",this.nombre,this.idUsuario);
+         infoDocente info = new infoDocente ("Fundamentos de electronica",this.nombre,this.idUsuario);
         info.setVisible(true);
     }//GEN-LAST:event_fundamentoselectronicaMouseClicked
 

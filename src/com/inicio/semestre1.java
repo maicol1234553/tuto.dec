@@ -70,6 +70,12 @@ public class semestre1 extends javax.swing.JFrame {
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
+
         jLabel2.setText("Pensamiento Algoritmico");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -109,6 +115,11 @@ public class semestre1 extends javax.swing.JFrame {
         );
 
         jLabel3.setText("Fundamentos de electronica");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -222,10 +233,22 @@ public class semestre1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-    String materiaSeleccionada="algebra lineal";
+    String materiaSeleccionada="Algebra lineal";
     escogerPro escoger = new escogerPro(this.idUsuario,materiaSeleccionada);
     escoger.setVisible(true);
     }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+       String materiaSeleccionada="Pensamiento algoritmico";
+    escogerPro escoger = new escogerPro(this.idUsuario,materiaSeleccionada);
+    escoger.setVisible(true);
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        String materiaSeleccionada="Fundamentos de electronica";
+    escogerPro escoger = new escogerPro(this.idUsuario,materiaSeleccionada);
+    escoger.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
    
 

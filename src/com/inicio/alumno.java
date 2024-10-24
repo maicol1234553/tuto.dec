@@ -318,42 +318,42 @@ public class alumno extends javax.swing.JFrame {
     private void semestre1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre1MouseClicked
                                        
     semestre1 sem1 = new semestre1(this.nombre,this.idUsuario);
-    sem1.setVisible(true);
-    this.setVisible(false);
+sem1.setVisible(true);
+this.setVisible(false);
+
+// Aquí debes capturar el semestre seleccionado, en este caso es "semestre1"
+String semestre = "semestre 1";
+
+// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
+String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+
+try {    
+    // Obtén la conexión a la base de datos
+    Connection con = conexion.obtenerconexion();
+    PreparedStatement ps = con.prepareStatement(sql);
     
-    // Aquí debes capturar el semestre seleccionado, en este caso es "semestre1"
-    String semestre = "semestre1";
+    // Establece los valores en el PreparedStatement
+    ps.setString(1, semestre);          // Coloca el semestre
+    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
     
-    // Consulta SQL para insertar datos (dejas que el autoincremento maneje el idEstudiante)
-    String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
-
-    try {    
-        // Obtén la conexión a la base de datos
-        Connection con = conexion.obtenerconexion();
-        PreparedStatement ps = con.prepareStatement(sql);
-        
-        // Establece los valores en el PreparedStatement
-        ps.setString(1, semestre);          // Coloca el semestre
-        ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
-        
-        // Ejecuta la inserción
-        int filasAfectadas = ps.executeUpdate();
-        
-        // Verifica si se insertaron datos
-        if (filasAfectadas > 0) {
-            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
-        }
-
-        // Cierra los recursos
-        ps.close();
-        con.close();
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    // Ejecuta la inserción
+    int filasAfectadas = ps.executeUpdate();
+    
+    // Verifica si se insertaron datos
+    if (filasAfectadas > 0) {
+        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    } else {
+        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
     }
+
+    // Cierra los recursos
+    ps.close();
+    con.close();
+
+} catch (SQLException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+}
 
 
        
