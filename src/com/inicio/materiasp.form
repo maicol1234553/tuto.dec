@@ -61,8 +61,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel6" max="32767" attributes="0"/>
-                              <Component id="jPanel1" max="32767" attributes="0"/>
+                              <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -88,25 +88,23 @@
                       <Component id="jPanel8" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel6" alignment="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="jPanel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel10" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel4" max="32767" attributes="0"/>
                       </Group>
@@ -125,12 +123,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="calmultivariado" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="estructurasinfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="fisica3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="arquitectura" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="fundamentosadmi" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingles2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -142,29 +140,29 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="calmultivariado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="estructurasinfo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="fisica3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="arquitectura" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="fundamentosadmi" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingles2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="calmultivariado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo multivario"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calmultivariadoMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -172,29 +170,32 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="estructurasinfo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estructuras de informaci&#xf3;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="fisica3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fisica (electricidad y magnetismo)"/>
+                <Property name="text" type="java.lang.String" value="Fisica III (electricidad y magnetismo)"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fisica3MouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="arquitectura">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Arquitectura de computadores"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="fundamentosadmi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fundamentos administrativos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="ingles2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Imgles II"/>
+                <Property name="text" type="java.lang.String" value="Ingles II"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -209,18 +210,18 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programacion1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Caldiferencial" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="argumentativo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fisica1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="estadistica" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pensamientocri1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -234,17 +235,17 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="Caldiferencial" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="programacion1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                      <Component id="argumentativo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                      <Component id="fisica1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <Component id="estadistica" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                      <Component id="pensamientocri1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -256,32 +257,32 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
+            <Component class="javax.swing.JLabel" name="programacion1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Programaci&#xf3;n I"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
+            <Component class="javax.swing.JLabel" name="Caldiferencial">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo diferencial"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
+            <Component class="javax.swing.JLabel" name="fisica1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fisica I (Mec&#xe1;nica)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
+            <Component class="javax.swing.JLabel" name="argumentativo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Razonamiento argumentativo "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
+            <Component class="javax.swing.JLabel" name="estadistica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estad&#xed;stica, probabilidad e inferencia"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
+            <Component class="javax.swing.JLabel" name="pensamientocri1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicaci&#xf3;n y pensamiento cr&#xed;tico I"/>
               </Properties>
@@ -298,18 +299,18 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="programacion2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="calintegral" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fisica2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ciudadania" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ingles1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="comunicacion2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                           </Group>
@@ -323,17 +324,17 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                      <Component id="calintegral" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                      <Component id="programacion2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                      <Component id="fisica2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                      <Component id="ciudadania" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingles1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                      <Component id="comunicacion2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -345,32 +346,32 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 3"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
+            <Component class="javax.swing.JLabel" name="programacion2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Programaci&#xf3;n II"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
+            <Component class="javax.swing.JLabel" name="calintegral">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo integral"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
+            <Component class="javax.swing.JLabel" name="ciudadania">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ciudadania sel siglo XXI"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
+            <Component class="javax.swing.JLabel" name="fisica2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="F&#xed;sica II (optica y ondas)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel20">
+            <Component class="javax.swing.JLabel" name="ingles1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles I"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel21">
+            <Component class="javax.swing.JLabel" name="comunicacion2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicaci&#xf3;n y pensamiento cr&#xed;tico II"/>
               </Properties>
@@ -387,7 +388,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="algebralineal" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pensamiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pensamientoal" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="fundamentoselectronica" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="fundamentosing" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="discretas" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -405,7 +406,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="algebralineal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="pensamiento" min="-2" max="-2" attributes="0"/>
+                      <Component id="pensamientoal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fundamentoselectronica" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -433,12 +434,12 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="pensamiento">
+            <Component class="javax.swing.JLabel" name="pensamientoal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pensamiento algor&#xed;tmico"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pensamientoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pensamientoalMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="fundamentoselectronica">
@@ -484,18 +485,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ecuadiferenciales" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingsoftware" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="operativos" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sisinformacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="basesdedatos" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="planeacionestrategica" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingles3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -505,32 +503,30 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="ecuadiferenciales" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingsoftware" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                      <Component id="operativos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                      <Component id="sisinformacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                      <Component id="basesdedatos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                      <Component id="planeacionestrategica" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="ingles3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel29">
+            <Component class="javax.swing.JLabel" name="ecuadiferenciales">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ecuaciones diferenciales"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel29MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ecuadiferencialesMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
@@ -538,35 +534,38 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 5"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel31">
+            <Component class="javax.swing.JLabel" name="ingsoftware">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingenieria de software I"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel32">
+            <Component class="javax.swing.JLabel" name="operativos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sistemas operativos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel33">
+            <Component class="javax.swing.JLabel" name="sisinformacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sistemas de informaci&#xf3;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
+            <Component class="javax.swing.JLabel" name="basesdedatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bases de datos "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
+            <Component class="javax.swing.JLabel" name="planeacionestrategica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Planeacion estrategica"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel44">
+            <Component class="javax.swing.JLabel" name="ingles3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles III"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingles3MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -575,18 +574,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="matespeciales" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingsoftware2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="comudatos" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="networking" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="emprendimiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingles4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="catedra" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="innovacionpro" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -598,33 +597,33 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                      <Component id="matespeciales" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingsoftware2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                      <Component id="comudatos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                      <Component id="networking" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                      <Component id="catedra" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                      <Component id="innovacionpro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                      <Component id="emprendimiento" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingles4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel36">
+            <Component class="javax.swing.JLabel" name="matespeciales">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Matematicas especiales"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel36MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="matespecialesMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel37">
@@ -632,39 +631,39 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 6"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel38">
+            <Component class="javax.swing.JLabel" name="ingsoftware2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingenieria de software II"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel39">
+            <Component class="javax.swing.JLabel" name="comudatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicacion de datos "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel40">
+            <Component class="javax.swing.JLabel" name="networking">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Networking"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel41">
+            <Component class="javax.swing.JLabel" name="catedra">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Catedra generacion de XXI  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel42">
+            <Component class="javax.swing.JLabel" name="emprendimiento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Emprendimiento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel43">
+            <Component class="javax.swing.JLabel" name="ingles4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles IV"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel61">
+            <Component class="javax.swing.JLabel" name="innovacionpro">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion"/>
+                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(problemas y formulacion"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -674,20 +673,16 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="analisisnum" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="redesycomunicacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cienciadedtaos" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="seginformatica" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cienciainnovacionmarco" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="operativa" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -699,32 +694,29 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="analisisnum" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                      <Component id="operativa" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                      <Component id="redesycomunicacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                      <Component id="cienciadedtaos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                      <Component id="seginformatica" min="-2" pref="16" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="cienciainnovacionmarco" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel45">
+            <Component class="javax.swing.JLabel" name="analisisnum">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Analisis numerico"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel45MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="analisisnumMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel46">
@@ -732,34 +724,29 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 7"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel47">
+            <Component class="javax.swing.JLabel" name="operativa">
               <Properties>
-                <Property name="text" type="java.lang.String" value="operativo"/>
+                <Property name="text" type="java.lang.String" value="operativa"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel48">
+            <Component class="javax.swing.JLabel" name="redesycomunicacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Redes y comunicacion"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel49">
+            <Component class="javax.swing.JLabel" name="cienciadedtaos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ciemcia de datos "/>
+                <Property name="text" type="java.lang.String" value="ciencia de datos "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel50">
+            <Component class="javax.swing.JLabel" name="seginformatica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Seguridad informatica"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel51">
+            <Component class="javax.swing.JLabel" name="cienciainnovacionmarco">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Emprendimiento"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel62">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion"/>
+                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(marco de referencia)"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -769,14 +756,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel63" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="artificial" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="automatas" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="profundizacion1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cienciainnovacioncampo" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -788,25 +775,25 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
+                      <Component id="artificial" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                      <Component id="automatas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                      <Component id="profundizacion1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="60" max="32767" attributes="0"/>
+                      <Component id="cienciainnovacioncampo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel52">
+            <Component class="javax.swing.JLabel" name="artificial">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Inteligencia artificial"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel52MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="artificialMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel53">
@@ -814,19 +801,19 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 8"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel54">
+            <Component class="javax.swing.JLabel" name="automatas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="lenguajes automatas"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel55">
+            <Component class="javax.swing.JLabel" name="profundizacion1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="profundizacion I"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel63">
+            <Component class="javax.swing.JLabel" name="cienciainnovacioncampo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion"/>
+                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(trabajo de campo)"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -836,14 +823,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="gerencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="modelacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="profundizacion2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="opciongrado" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -855,25 +842,25 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                      <Component id="gerencia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
+                      <Component id="modelacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
+                      <Component id="profundizacion2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
+                      <Component id="opciongrado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel56">
+            <Component class="javax.swing.JLabel" name="gerencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Gerencia de proyectos "/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel56MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="gerenciaMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel57">
@@ -881,17 +868,17 @@
                 <Property name="text" type="java.lang.String" value="SEMESTRE 9"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel58">
+            <Component class="javax.swing.JLabel" name="modelacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="modelacion"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel59">
+            <Component class="javax.swing.JLabel" name="profundizacion2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="profundizacion Il"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel60">
+            <Component class="javax.swing.JLabel" name="opciongrado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Opcion de grado"/>
               </Properties>
