@@ -1,91 +1,125 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.inicio;
 
-/**
- *
- * @author maico
- */
-public class escogerPro extends javax.swing.JFrame {
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-    /**
-     * Creates new form escogerPro
-     */
-    public escogerPro() {
+public class escogerPro extends javax.swing.JFrame {
+    private JTable table;
+    private JButton btnSeleccionar;
+    private int idUsuario;
+    private String materiaSeleccionada;
+
+    public escogerPro(int idUsuario, String materiaSeleccionada) {
+        this.idUsuario= idUsuario;
+        this.materiaSeleccionada = materiaSeleccionada;
         initComponents();
-        
-        
+        loadData();
     }
 
-    
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        setTitle("Seleccionar Profesor");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 400);
 
-        jLabel1 = new javax.swing.JLabel();
+        table = new JTable();
+        btnSeleccionar = new JButton("Seleccionar");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(new JScrollPane(table));
+        panel.add(btnSeleccionar);
+        add(panel);
 
-        jLabel1.setText("Escoge al profesor con el que quieres ver la tutoria ");
+        btnSeleccionar.addActionListener(e -> seleccionarProfesor());
+    }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(278, Short.MAX_VALUE))
-        );
+    private void loadData() {
+        String sql = "SELECT p.idProfesor, p.descripcionP, m.nombreMateria FROM profesor p " +
+                     "JOIN materias_profesor mp ON p.idProfesor = mp.idProfesor " +
+                     "JOIN materias m ON mp.idMateria = m.idMateria " +
+                     "WHERE m.nombreMateria = ?";
+        try (Connection con = conexion.obtenerconexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            ps.setString(1, materiaSeleccionada);
+            ResultSet rs = ps.executeQuery();
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+            DefaultTableModel model = new DefaultTableModel(new String[]{"ID Profesor", "Descripción", "Materia"}, 0);
+            while (rs.next()) {
+                model.addRow(new Object[]{rs.getInt("idProfesor"), rs.getString("descripcionP"), rs.getString("nombreMateria")});
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(escogerPro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(escogerPro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(escogerPro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(escogerPro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            table.setModel(model);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al cargar datos: " + e.getMessage());
         }
-        //</editor-fold>
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new escogerPro().setVisible(true);
+    private void seleccionarProfesor() {
+        int row = table.getSelectedRow();
+        if (row != -1) {
+            int idProfesor = (int) table.getValueAt(row, 0);
+            String nombreMateria = (String) table.getValueAt(row, 2);
+            guardarTutoria(idUsuario, idProfesor, nombreMateria);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor.");
+        }
+    }
+
+    private void guardarTutoria(int idEstudiante, int idProfesor, String nombreMateria) {
+        String sql = "INSERT INTO tutoria (idEstudiante, idProfesor, idMateria, comentario) VALUES (?, ?, ?, ?)";
+        try (Connection con = conexion.obtenerconexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, idEstudiante);
+            ps.setInt(2, idProfesor);
+            ps.setInt(3, obtenerIdMateria(nombreMateria));
+            ps.setString(4, "");
+
+            int filasAfectadas = ps.executeUpdate();
+            if (filasAfectadas > 0) {
+                JOptionPane.showMessageDialog(this, "Tutoría guardada correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo guardar la tutoría.");
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al guardar la tutoría: " + e.getMessage());
+        }
+    }
+
+    private int obtenerIdMateria(String nombreMateria) {
+        String sql = "SELECT idMateria FROM materias WHERE nombreMateria = ?";
+        try (Connection con = conexion.obtenerconexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, nombreMateria);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("idMateria");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al obtener ID de la materia: " + e.getMessage());
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        int idEstudiante = 1;
+        String materiaSeleccionada = "Nombre de la Materia"; // Reemplaza con el nombre real de la materia
+        SwingUtilities.invokeLater(() -> {
+            escogerPro frame = new escogerPro(idEstudiante, materiaSeleccionada);
+            frame.setVisible(true);
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    // End of variables declaration//GEN-END:variables
 }

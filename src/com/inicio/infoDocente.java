@@ -3,9 +3,11 @@ package com.inicio;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
-
+/**
 /**
  *
  * @author maico
@@ -35,8 +37,6 @@ public class infoDocente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         nombreL = new javax.swing.JLabel();
         materia = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        texto = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -44,7 +44,6 @@ public class infoDocente extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         datos = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,12 +57,6 @@ public class infoDocente extends javax.swing.JFrame {
         });
 
         materia.setText("MATERIA");
-
-        texto.setColumns(20);
-        texto.setRows(5);
-        texto.setLineWrap(true); // Ajuste de línea habilitado
-        texto.setWrapStyleWord(true); // Ajuste por palabras completas
-        jScrollPane1.setViewportView(texto);
 
         jLabel2.setText("Volver");
 
@@ -90,16 +83,13 @@ public class infoDocente extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(guardar, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(22, 22, 22))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(guardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(guardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         datos.setColumns(20);
@@ -108,56 +98,45 @@ public class infoDocente extends javax.swing.JFrame {
 
         jLabel1.setText("ingresa tus datos de contacto ");
 
-        jLabel3.setText("Informacion de la materia");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 59, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(materia))
+                    .addComponent(materia)
                     .addComponent(nombreL))
                 .addGap(133, 133, 133)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+                .addGap(123, 123, 123))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(232, 232, 232)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(nombreL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(materia)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
-                .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(nombreL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(materia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,7 +145,7 @@ public class infoDocente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 111, Short.MAX_VALUE))
+                .addGap(0, 120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,73 +158,66 @@ public class infoDocente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarMouseClicked
-       
+   
+  String datosPro = datos.getText();  
+
+// Consulta SQL para verificar si el profesor ya existe en la tabla profesor
+String consulta = "SELECT COUNT(*) FROM profesor WHERE idProfesor = ?";
+
+// Consulta SQL para insertar datos en la tabla profesor (si no existe)
+String url = "INSERT INTO profesor (descripcionP, idProfesor) VALUES (?, ?)";
+
+try {
+    // Obtén la conexión a la base de datos
+    Connection con = conexion.obtenerconexion();
+
+    // Verificar si el profesor ya está registrado
+    PreparedStatement psConsulta = con.prepareStatement(consulta);
+    psConsulta.setInt(1, idUsuario);
+    ResultSet rsConsulta = psConsulta.executeQuery();
+
+    if (rsConsulta.next()) {
+        int count = rsConsulta.getInt(1);
         
-  String materiaTexto = texto.getText(); 
-  String datosPro = datos.getText();
-if (materiaTexto.isEmpty()) {
-    JOptionPane.showMessageDialog(this, "El campo de materia no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
-    return; // Salir si el campo está vacío
-}else{
+        if (count > 0) {
+            // El profesor ya existe, muestra un mensaje o haz algo más
+            JOptionPane.showMessageDialog(this, "El profesor ya está registrado.");
+        } else {
+            // El profesor no existe, procede con la inserción
+            PreparedStatement psInsertar = con.prepareStatement(url);
 
-// Consulta SQL para insertar datos
-String url = "INSERT INTO materias (nombreMateria, descripcionMateria) VALUES ( ?, ?)";
+            // Establece los valores en el PreparedStatement
+            psInsertar.setString(1, datosPro);  // Coloca la descripción
+            psInsertar.setInt(2, idUsuario);    // Coloca el id del usuario (ya tienes este valor)
 
-try {    
-    Connection con = conexion.obtenerconexion(); // Obtener la conexión
-    PreparedStatement ps = con.prepareStatement(url); // Preparar la consulta
+            // Ejecuta la inserción
+            int filasAfectadas = psInsertar.executeUpdate();
 
-    // Establecer los valores en el orden correcto
-    ps.setString(1, this.materiastr);          // nombre de la materia
-    ps.setString(2, materiaTexto);      // descripcion de la materia
-    
-    // Ejecutar la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
-    } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+            // Verifica si se insertaron datos
+            if (filasAfectadas > 0) {
+                JOptionPane.showMessageDialog(this, "Datos del profesor insertados correctamente.");
+
+                // Ahora puedes pasar el idUsuario a la siguiente ventana, ya que este id es el mismo que en la tabla profesor
+                InfoMateria materiainfo = new InfoMateria(this.materiastr, this.nombre, idUsuario);
+                materiainfo.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+            }
+
+            // Cierra el PreparedStatement de inserción
+            psInsertar.close();
+        }
     }
 
-    ps.close(); // Cerrar el PreparedStatement
-    con.close(); // Cerrar la conexión
+    // Cierra el PreparedStatement de consulta y la conexión
+    psConsulta.close();
+    con.close();
 
 } catch (SQLException e) {
     e.printStackTrace();
     JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
 }
 
-}  
- String sql = "INSERT INTO profesor (descripcionP, id) VALUES (?, ?)";
-
-    try {    
-        // Obtén la conexión a la base de datos
-        Connection con = conexion.obtenerconexion();
-        PreparedStatement ps = con.prepareStatement(sql);
-        
-        // Establece los valores en el PreparedStatement
-        ps.setString(1, datosPro);          // Coloca el semestre
-        ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
-        
-        // Ejecuta la inserción
-        int filasAfectadas = ps.executeUpdate();
-        
-        // Verifica si se insertaron datos
-        if (filasAfectadas > 0) {
-            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
-        }
-
-        // Cierra los recursos
-        ps.close();
-        con.close();
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
-    }
     }//GEN-LAST:event_guardarMouseClicked
 
     private void nombreLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLMouseClicked
@@ -260,14 +232,11 @@ try {
     private javax.swing.JLabel guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel materia;
     private javax.swing.JLabel nombreL;
-    private javax.swing.JTextArea texto;
     // End of variables declaration//GEN-END:variables
 }

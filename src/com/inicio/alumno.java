@@ -317,7 +317,7 @@ public class alumno extends javax.swing.JFrame {
 
     private void semestre1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre1MouseClicked
                                        
-    semestre1 sem1 = new semestre1();
+    semestre1 sem1 = new semestre1(this.nombre,this.idUsuario);
     sem1.setVisible(true);
     this.setVisible(false);
     
@@ -325,7 +325,7 @@ public class alumno extends javax.swing.JFrame {
     String semestre = "semestre1";
     
     // Consulta SQL para insertar datos (dejas que el autoincremento maneje el idEstudiante)
-    String sql = "INSERT INTO estudiante (semestre, id) VALUES (?, ?)";
+    String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
 
     try {    
         // Obtén la conexión a la base de datos
@@ -358,9 +358,10 @@ public class alumno extends javax.swing.JFrame {
 
        
     }//GEN-LAST:event_semestre1MouseClicked
-
+      
+    
     private void semestre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre2MouseClicked
-        semestre2 sem2 = new semestre2 ();
+       semestre2 sem2 = new semestre2 ();
        sem2.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_semestre2MouseClicked
