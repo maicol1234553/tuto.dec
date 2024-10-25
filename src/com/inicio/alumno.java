@@ -321,6 +321,7 @@ public class alumno extends javax.swing.JFrame {
 sem1.setVisible(true);
 this.setVisible(false);
 
+
 // Aquí debes capturar el semestre seleccionado, en este caso es "semestre1"
 String semestre = "semestre 1";
 
@@ -352,7 +353,7 @@ try {
 
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "ya tienes un semestre registrado: " );
 }
 
 

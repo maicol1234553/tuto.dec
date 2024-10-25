@@ -11,21 +11,13 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author maico
- */
-public class opcion_registro extends javax.swing.JFrame {
-    
+public class registro_profesor extends javax.swing.JFrame {
 
     /**
-     * Creates new form opcion_registro
+     * Creates new form registro_profesor
      */
-    public opcion_registro() {
-        
+    public registro_profesor() {
         initComponents();
-        setLocationRelativeTo(null);
-
     }
 
     /**
@@ -37,7 +29,6 @@ public class opcion_registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -60,11 +51,7 @@ public class opcion_registro extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Rol = new javax.swing.JLabel();
 
-        jLabel3.setText("jLabel3");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(800, 500));
@@ -160,7 +147,7 @@ public class opcion_registro extends javax.swing.JFrame {
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Rol.setText("alumno");
+        Rol.setText("profesor");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -250,88 +237,136 @@ public class opcion_registro extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombresActionPerformed
-        
-        
+
     }//GEN-LAST:event_nombresActionPerformed
 
-    private void contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaActionPerformed
-       
-        
-    }//GEN-LAST:event_contraseñaActionPerformed
-
     private void apellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidosActionPerformed
-        
-      
+
     }//GEN-LAST:event_apellidosActionPerformed
 
     private void correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoActionPerformed
-        
+
     }//GEN-LAST:event_correoActionPerformed
 
     private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
-      
+
     }//GEN-LAST:event_cedulaActionPerformed
 
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-      
+
     }//GEN-LAST:event_usuarioActionPerformed
+
+    private void contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñaActionPerformed
+
+    }//GEN-LAST:event_contraseñaActionPerformed
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // TODO add your handling code here:
-String nombre = nombres.getText();
-String contra = contraseña.getText();
-String apellido = apellidos.getText();
-String correos = correo.getText();
-String id = cedula.getText();
-String user = usuario.getText();
-String rol = Rol.getText();
+        String nombre = nombres.getText();
+        String contra = contraseña.getText();
+        String apellido = apellidos.getText();
+        String correos = correo.getText();
+        String id = cedula.getText();
+        String user = usuario.getText();
+        String rol = Rol.getText();
 
-// Consulta SQL para insertar datos
-String url = "INSERT INTO registro (IdUsuario, nombreUsuario, apellidoUsuario, Rol, correoUsuario, Usuario, contraseñaUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        // Consulta SQL para insertar datos
+        String url = "INSERT INTO registro (IdUsuario, nombreUsuario, apellidoUsuario, Rol, correoUsuario, Usuario, contraseñaUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-try {    
-    Connection con = conexion.obtenerconexion(); // Obtener la conexión
-    PreparedStatement ps = con.prepareStatement(url); // Preparar la consulta
+        try {
+            Connection con = conexion.obtenerconexion(); // Obtener la conexión
+            PreparedStatement ps = con.prepareStatement(url); // Preparar la consulta
 
-    // Establecer los valores en el orden correcto
-    ps.setString(1, id);          // cedula
-    ps.setString(2, nombre);      // nombre
-    ps.setString(3, apellido);    // apellido
-    ps.setString(4, rol);    // privilegio (puedes cambiar esto si es dinámico)
-    ps.setString(5, correos);     // correo
-    ps.setString(6, user);        // usuario
-    ps.setString(7, contra);      // contrasena
+            // Establecer los valores en el orden correcto
+            ps.setString(1, id);          // cedula
+            ps.setString(2, nombre);      // nombre
+            ps.setString(3, apellido);    // apellido
+            ps.setString(4, rol);    // privilegio (puedes cambiar esto si es dinámico)
+            ps.setString(5, correos);     // correo
+            ps.setString(6, user);        // usuario
+            ps.setString(7, contra);      // contrasena
 
-    // Ejecutar la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
-    } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
-    }
+            // Ejecutar la inserción
+            int filasAfectadas = ps.executeUpdate();
 
-    ps.close(); // Cerrar el PreparedStatement
-    con.close(); // Cerrar la conexión
+            if (filasAfectadas > 0) {
+                JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+            }
 
-} catch (SQLException e) {
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
-}
+            ps.close(); // Cerrar el PreparedStatement
+            con.close(); // Cerrar la conexión
 
-        
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+        }
+
     }//GEN-LAST:event_jLabel15MouseClicked
 
     /**
      * @param args the command line arguments
      */
-   
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(registro_profesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(registro_profesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(registro_profesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(registro_profesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new registro_profesor().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Rol;
@@ -347,7 +382,6 @@ try {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
