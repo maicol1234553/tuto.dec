@@ -20,6 +20,8 @@ public class InfoMateria extends javax.swing.JFrame {
     private String materiastr;
     public InfoMateria(String materiastr,String nombre,int idUsuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("informacion de la materia");
         this.nombre = nombre;
         this.materiastr = materiastr;
         this.idUsuario = idUsuario;

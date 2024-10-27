@@ -16,6 +16,8 @@ public class materiasp extends javax.swing.JFrame {
         this.nombre = nombre ; 
        this.idUsuario = idUsuario;
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Materias de ingenieria en sistemas");
     }
 
     /**

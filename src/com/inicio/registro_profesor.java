@@ -18,6 +18,8 @@ public class registro_profesor extends javax.swing.JFrame {
      */
     public registro_profesor() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Registro profesor");
     }
 
     /**

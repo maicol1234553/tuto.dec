@@ -16,6 +16,7 @@ public class inicio extends javax.swing.JFrame {
         
         
         initComponents();
+        setTitle("Iniciar sesion");
         setLocationRelativeTo(null);
     }
     /**
@@ -91,6 +92,11 @@ public class inicio extends javax.swing.JFrame {
         contraseñatf.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 contraseñatfMousePressed(evt);
+            }
+        });
+        contraseñatf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseñatfActionPerformed(evt);
             }
         });
         jPanel1.add(contraseñatf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 360, 40));
@@ -306,7 +312,12 @@ try {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         login_admin admin = new login_admin();
         admin.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void contraseñatfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñatfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseñatfActionPerformed
  public static void main(String[] args) {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {

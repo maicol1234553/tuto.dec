@@ -8,6 +8,8 @@ public class semestre9 extends javax.swing.JFrame {
     private int idUsuario;
     public semestre9(String nombre,int idUsuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Semestre 9");
         this.idUsuario = idUsuario;
         this.nombre = nombre;
     }

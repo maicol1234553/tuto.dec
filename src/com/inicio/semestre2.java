@@ -14,6 +14,8 @@ private String nombre;
     private int idUsuario;
     public semestre2(String nombre,int idUsuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Semestre 2");
          this.idUsuario = idUsuario;
         this.nombre = nombre;
     }

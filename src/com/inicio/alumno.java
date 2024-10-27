@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.inicio;
 
 import java.sql.Connection;
@@ -10,10 +7,7 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author maico
- */
+
 public class alumno extends javax.swing.JFrame {
     private int idUsuario;
     private String nombre;
@@ -21,6 +15,7 @@ public class alumno extends javax.swing.JFrame {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         initComponents();
+        setTitle("Seleccionar semestre");
         setLocationRelativeTo(null);
         
        

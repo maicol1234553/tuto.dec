@@ -14,6 +14,8 @@ public class semestre5 extends javax.swing.JFrame {
     private int idUsuario;
     public semestre5(String nombre,int idUsuario) {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Semestre 5");
         this.idUsuario = idUsuario;
         this.nombre = nombre;
     }

@@ -11,19 +11,15 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author maico
- */
+
 public class opcion_registro extends javax.swing.JFrame {
     
 
-    /**
-     * Creates new form opcion_registro
-     */
+   
     public opcion_registro() {
         
         initComponents();
+        setTitle("Registro estudiante");
         setLocationRelativeTo(null);
 
     }
