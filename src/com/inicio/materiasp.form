@@ -29,8 +29,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,11 +50,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jPanel7" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jPanel5" alignment="1" max="32767" attributes="0"/>
                               <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
@@ -63,6 +58,24 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
                               <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel7" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -95,20 +108,23 @@
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel4" max="32767" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jPanel10" max="32767" attributes="0"/>
+                              <Component id="jPanel7" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jPanel11" max="32767" attributes="0"/>
+                      <Component id="jPanel12" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -174,6 +190,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estructuras de informaci&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="estructurasinfoMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="fisica3">
               <Properties>
@@ -187,16 +206,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Arquitectura de computadores"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="arquitecturaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="fundamentosadmi">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fundamentos administrativos"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fundamentosadmiMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ingles2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles II"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingles2MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -261,31 +289,49 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Programaci&#xf3;n I"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="programacion1MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Caldiferencial">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo diferencial"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CaldiferencialMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="fisica1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fisica I (Mec&#xe1;nica)"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fisica1MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="argumentativo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Razonamiento argumentativo "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="argumentativoMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="estadistica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estad&#xed;stica, probabilidad e inferencia"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="estadisticaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="pensamientocri1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicaci&#xf3;n y pensamiento cr&#xed;tico I"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pensamientocri1MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -328,8 +374,8 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="programacion2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="fisica2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="fisica2" min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Component id="ciudadania" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ingles1" min="-2" max="-2" attributes="0"/>
@@ -350,31 +396,49 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Programaci&#xf3;n II"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="programacion2MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="calintegral">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo integral"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="calintegralMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ciudadania">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ciudadania sel siglo XXI"/>
+                <Property name="text" type="java.lang.String" value="Ciudadania del siglo XXI"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ciudadaniaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="fisica2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="F&#xed;sica II (optica y ondas)"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fisica2MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ingles1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles I"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingles1MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="comunicacion2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicaci&#xf3;n y pensamiento cr&#xed;tico II"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="comunicacion2MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -538,26 +602,41 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingenieria de software I"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingsoftwareMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="operativos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sistemas operativos"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="operativosMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="sisinformacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sistemas de informaci&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sisinformacionMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="basesdedatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Bases de datos "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="basesdedatosMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="planeacionestrategica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Planeacion estrategica"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="planeacionestrategicaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ingles3">
               <Properties>
@@ -585,9 +664,8 @@
                           <Component id="emprendimiento" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="ingles4" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="catedra" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="innovacionpro" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="181" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -606,13 +684,11 @@
                       <Component id="networking" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="catedra" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="innovacionpro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
                       <Component id="emprendimiento" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ingles4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -635,36 +711,49 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingenieria de software II"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingsoftware2MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="comudatos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comunicacion de datos "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="comudatosMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="networking">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Networking"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="networkingMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="catedra">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Catedra generacion de XXI  "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="catedraMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="emprendimiento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Emprendimiento"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="emprendimientoMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ingles4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingles IV"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="innovacionpro">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(problemas y formulacion"/>
-              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingles4MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -681,10 +770,9 @@
                           <Component id="redesycomunicacion" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="cienciadedtaos" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="seginformatica" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cienciainnovacionmarco" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="operativa" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="184" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -703,9 +791,7 @@
                       <Component id="cienciadedtaos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="seginformatica" min="-2" pref="16" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cienciainnovacionmarco" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -728,26 +814,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="operativa"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="operativaMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="redesycomunicacion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Redes y comunicacion"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="redesycomunicacionMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="cienciadedtaos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ciencia de datos "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cienciadedtaosMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="seginformatica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Seguridad informatica"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="cienciainnovacionmarco">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(marco de referencia)"/>
-              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="seginformaticaMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -763,9 +856,8 @@
                           <Component id="artificial" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="automatas" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="profundizacion1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cienciainnovacioncampo" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="200" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -780,8 +872,6 @@
                       <Component id="automatas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="profundizacion1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cienciainnovacioncampo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -805,16 +895,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="lenguajes automatas"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="automatasMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="profundizacion1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="profundizacion I"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="cienciainnovacioncampo">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ciencia tecnologia e innovacion(trabajo de campo)"/>
-              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="profundizacion1MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -830,9 +921,8 @@
                           <Component id="gerencia" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="modelacion" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="profundizacion2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="opciongrado" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="189" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -847,8 +937,6 @@
                       <Component id="modelacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="profundizacion2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="opciongrado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -872,16 +960,70 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="modelacion"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="modelacionMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="profundizacion2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="profundizacion Il"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="profundizacion2MouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="opciongrado">
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel11">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" alignment="0" pref="96" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" alignment="0" pref="42" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Opcion de grado"/>
+                <Property name="text" type="java.lang.String" value="Volver"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel12">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver mis comentarios"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
