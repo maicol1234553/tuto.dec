@@ -163,7 +163,7 @@ public class inicio extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 255));
         jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel4MouseDragged(evt);

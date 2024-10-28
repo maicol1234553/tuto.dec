@@ -101,6 +101,7 @@ public class materiasp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,7 +188,7 @@ public class materiasp extends javax.swing.JFrame {
                 .addComponent(fundamentosadmi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ingles2)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
@@ -367,7 +368,7 @@ public class materiasp extends javax.swing.JFrame {
                 .addComponent(ingles1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comunicacion2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(153, 153, 255));
@@ -767,7 +768,7 @@ public class materiasp extends javax.swing.JFrame {
                 .addComponent(automatas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(profundizacion1)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(153, 153, 255));
@@ -865,18 +866,21 @@ public class materiasp extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 1, 12)); // NOI18N
+        jLabel4.setText("ESCOGE LA MATERIA QUE QUIERES ORIENTAR");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -885,52 +889,55 @@ public class materiasp extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
+                        .addGap(293, 293, 293)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(39, 39, 39)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addComponent(jLabel4)
+                .addGap(9, 9, 9)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -944,9 +951,7 @@ public class materiasp extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -955,76 +960,91 @@ public class materiasp extends javax.swing.JFrame {
     private void calmultivariadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calmultivariadoMouseClicked
         infoDocente info = new infoDocente ("Calculo multivariado ",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_calmultivariadoMouseClicked
 
     private void algebralinealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_algebralinealMouseClicked
         infoDocente info = new infoDocente ("algebra lineal",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_algebralinealMouseClicked
 
     private void pensamientoalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientoalMouseClicked
        infoDocente info = new infoDocente ("Pensamiento algoritmico",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_pensamientoalMouseClicked
 
     private void fundamentoselectronicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentoselectronicaMouseClicked
          infoDocente info = new infoDocente ("Fundamentos de electronica",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fundamentoselectronicaMouseClicked
 
     private void fundamentosingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentosingMouseClicked
          infoDocente info = new infoDocente ("Fundamentos de ingenieria",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fundamentosingMouseClicked
 
     private void discretasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discretasMouseClicked
          infoDocente info = new infoDocente ("Matematicas discretas",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_discretasMouseClicked
 
     private void pensamientosistemicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientosistemicoMouseClicked
          infoDocente info = new infoDocente ("Pensamiento sistemico y automatizacion",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_pensamientosistemicoMouseClicked
 
     private void ecuadiferencialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ecuadiferencialesMouseClicked
          infoDocente info = new infoDocente ("Ecuaciones diferenciales",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ecuadiferencialesMouseClicked
 
     private void ingles3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingles3MouseClicked
         infoDocente info = new infoDocente ("Ingles III",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingles3MouseClicked
 
     private void matespecialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matespecialesMouseClicked
        infoDocente info = new infoDocente ("Matematicas especiales",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_matespecialesMouseClicked
 
     private void analisisnumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_analisisnumMouseClicked
          infoDocente info = new infoDocente ("Analisis numerico",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_analisisnumMouseClicked
 
     private void artificialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_artificialMouseClicked
          infoDocente info = new infoDocente ("Inteligencia Artificial",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_artificialMouseClicked
 
     private void gerenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerenciaMouseClicked
          infoDocente info = new infoDocente ("Gerencia de proyectos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_gerenciaMouseClicked
 
     private void fisica3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fisica3MouseClicked
     infoDocente info = new infoDocente ("Fisica (electricidad y magnestismo)",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fisica3MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         verComentariosProfesor comentarios = new verComentariosProfesor(this.idUsuario);
         comentarios.setVisible(true);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -1036,176 +1056,211 @@ public class materiasp extends javax.swing.JFrame {
     private void CaldiferencialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CaldiferencialMouseClicked
     infoDocente info = new infoDocente ("Calculo diferencial",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_CaldiferencialMouseClicked
 
     private void programacion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_programacion1MouseClicked
     infoDocente info = new infoDocente ("Programacion I",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_programacion1MouseClicked
 
     private void argumentativoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_argumentativoMouseClicked
     infoDocente info = new infoDocente ("Razonamiento argumentativo",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_argumentativoMouseClicked
 
     private void fisica1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fisica1MouseClicked
     infoDocente info = new infoDocente ("Fisica (mecanica)",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fisica1MouseClicked
 
     private void estadisticaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estadisticaMouseClicked
     infoDocente info = new infoDocente ("Estadistica probabilidad e inferencia ",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_estadisticaMouseClicked
 
     private void pensamientocri1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pensamientocri1MouseClicked
     infoDocente info = new infoDocente ("Comunicacion y pensamiento critico I",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_pensamientocri1MouseClicked
 
     private void calintegralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calintegralMouseClicked
      infoDocente info = new infoDocente ("Calculo integral",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_calintegralMouseClicked
 
     private void programacion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_programacion2MouseClicked
     infoDocente info = new infoDocente ("Programacion II",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_programacion2MouseClicked
 
     private void fisica2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fisica2MouseClicked
     infoDocente info = new infoDocente ("Fisica (optica y ondas)",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fisica2MouseClicked
 
     private void ciudadaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ciudadaniaMouseClicked
     infoDocente info = new infoDocente ("Ciudadania del siglo XXI",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ciudadaniaMouseClicked
 
     private void ingles1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingles1MouseClicked
     infoDocente info = new infoDocente ("Ingles I",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingles1MouseClicked
 
     private void comunicacion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comunicacion2MouseClicked
     infoDocente info = new infoDocente ("Comunicacion y pensamiento critico II",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_comunicacion2MouseClicked
 
     private void estructurasinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estructurasinfoMouseClicked
     infoDocente info = new infoDocente ("Estructuras de informacion",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_estructurasinfoMouseClicked
 
     private void arquitecturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arquitecturaMouseClicked
     infoDocente info = new infoDocente ("Arquitectura de computadores",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_arquitecturaMouseClicked
 
     private void fundamentosadmiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fundamentosadmiMouseClicked
     infoDocente info = new infoDocente ("Fundamentos administrativos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_fundamentosadmiMouseClicked
 
     private void ingles2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingles2MouseClicked
     infoDocente info = new infoDocente ("Ingles II",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingles2MouseClicked
 
     private void ingsoftwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingsoftwareMouseClicked
     infoDocente info = new infoDocente ("Ingenieria de software I",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingsoftwareMouseClicked
 
     private void operativosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_operativosMouseClicked
     infoDocente info = new infoDocente ("Sistemas operativos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_operativosMouseClicked
 
     private void sisinformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sisinformacionMouseClicked
     infoDocente info = new infoDocente ("Sistemas de informacion",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_sisinformacionMouseClicked
 
     private void basesdedatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basesdedatosMouseClicked
      infoDocente info = new infoDocente ("Bases de datos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_basesdedatosMouseClicked
 
     private void planeacionestrategicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planeacionestrategicaMouseClicked
     infoDocente info = new infoDocente ("Planeacion estrategica",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_planeacionestrategicaMouseClicked
 
     private void ingsoftware2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingsoftware2MouseClicked
     infoDocente info = new infoDocente ("Ingenieria de software II",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingsoftware2MouseClicked
 
     private void comudatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comudatosMouseClicked
     infoDocente info = new infoDocente ("Comunicacion de datos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_comudatosMouseClicked
 
     private void networkingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_networkingMouseClicked
     infoDocente info = new infoDocente ("Networking",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_networkingMouseClicked
 
     private void catedraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catedraMouseClicked
     infoDocente info = new infoDocente ("Catedra generacion siglo XXI",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_catedraMouseClicked
 
     private void emprendimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emprendimientoMouseClicked
     infoDocente info = new infoDocente ("Emprendimiento",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_emprendimientoMouseClicked
 
     private void ingles4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingles4MouseClicked
     infoDocente info = new infoDocente ("Ingles IV",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ingles4MouseClicked
 
     private void operativaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_operativaMouseClicked
     infoDocente info = new infoDocente ("Operativa",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_operativaMouseClicked
 
     private void redesycomunicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_redesycomunicacionMouseClicked
     infoDocente info = new infoDocente ("Redes y comunicacion",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_redesycomunicacionMouseClicked
 
     private void cienciadedtaosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cienciadedtaosMouseClicked
     infoDocente info = new infoDocente ("Ciencia de datos",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_cienciadedtaosMouseClicked
 
     private void seginformaticaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seginformaticaMouseClicked
     infoDocente info = new infoDocente ("Seguridad informatica",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_seginformaticaMouseClicked
 
     private void automatasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_automatasMouseClicked
      infoDocente info = new infoDocente ("Lenguajes automatas",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_automatasMouseClicked
 
     private void profundizacion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profundizacion1MouseClicked
     infoDocente info = new infoDocente ("Profundizacion I",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_profundizacion1MouseClicked
 
     private void modelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelacionMouseClicked
     infoDocente info = new infoDocente ("Modelacion",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_modelacionMouseClicked
 
     private void profundizacion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profundizacion2MouseClicked
    infoDocente info = new infoDocente ("Profundizacion II",this.nombre,this.idUsuario);
         info.setVisible(true);
+        dispose();
     }//GEN-LAST:event_profundizacion2MouseClicked
 
    
@@ -1251,6 +1306,7 @@ public class materiasp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel57;

@@ -194,7 +194,7 @@ public class opcion_registro extends javax.swing.JFrame {
             .addComponent(Rol, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inicio/regis.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/regis.png"))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 153));
 
