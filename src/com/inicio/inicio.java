@@ -42,8 +42,6 @@ public class inicio extends javax.swing.JFrame {
         registrarjl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,35 +188,6 @@ public class inicio extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/tu.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 410, 470));
-
-        jPanel5.setBackground(new java.awt.Color(153, 153, 255));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ingresar como administrador");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 240, 40));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 360, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 500));
@@ -283,6 +252,10 @@ try {
                 materiasp ventanaDocente = new materiasp(nombre,idUsuario);
                 ventanaDocente.setVisible(true);
                 this.setVisible(false);
+            } else if (priv.equals("admin")) {
+                registro_profesor profesor = new registro_profesor(nombre,idUsuario);
+                profesor.setVisible(true);
+                this.setVisible(false);
             }
         } else {
             JOptionPane.showMessageDialog(null, "LA CONTRASEÑA ES INCORRECTA");
@@ -317,12 +290,6 @@ try {
         this.setLocation(x - xMouse,y - yMouse );
     }//GEN-LAST:event_jPanel4MouseDragged
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        login_admin admin = new login_admin();
-        admin.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
-
     private void contraseñatfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseñatfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contraseñatfActionPerformed
@@ -342,12 +309,10 @@ try {
     private javax.swing.JLabel ingresarjl;
     private javax.swing.JLabel iniciarsesionjl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

@@ -1,6 +1,6 @@
 
 package com.inicio;
-
+import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -51,6 +51,7 @@ public class alumno extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -355,6 +356,13 @@ public class alumno extends javax.swing.JFrame {
             .addGap(0, 34, Short.MAX_VALUE)
         );
 
+        jLabel4.setText("ver mis tutorias");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -393,7 +401,9 @@ public class alumno extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -417,9 +427,15 @@ public class alumno extends javax.swing.JFrame {
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(27, 27, 27))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -439,375 +455,646 @@ public class alumno extends javax.swing.JFrame {
     private void semestre1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre1MouseClicked
                                        
    semestre1 sem1 = new semestre1(this.nombre, this.idUsuario);
-sem1.setVisible(true);
-this.setVisible(false);
-
-// Aquí debes capturar el semestre seleccionado, en este caso es "semestre1"
 String semestre = "semestre 1";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem1.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem1.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem1.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
-
        
     }//GEN-LAST:event_semestre1MouseClicked
       
     
     private void semestre2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre2MouseClicked
-       semestre2 sem2 = new semestre2 (this.nombre,this.idUsuario);
-       sem2.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 2";
+       semestre2 sem2 = new semestre2(this.nombre, this.idUsuario);
+String semestre = "semestre 2";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem2.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem2.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem2.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre2MouseClicked
 
     private void semestre3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre3MouseClicked
-        semestre3 sem3 = new semestre3(this.nombre,this.idUsuario);
-       sem3.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 3";
+    semestre3 sem3 = new semestre3(this.nombre, this.idUsuario);
+String semestre = "semestre 3";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem3.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem3.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem3.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre3MouseClicked
 
     private void semestre4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre4MouseClicked
-        semestre4 sem4= new semestre4(this.nombre,this.idUsuario);
-       sem4.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 4";
+        semestre4 sem4 = new semestre4(this.nombre, this.idUsuario);
+String semestre = "semestre 4";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem4.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem4.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem4.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre4MouseClicked
 
     private void semestre5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre5MouseClicked
-        semestre5 sem5= new semestre5(this.nombre,this.idUsuario);
-       sem5.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 5";
+        semestre5 sem5 = new semestre5(this.nombre, this.idUsuario);
+String semestre = "semestre 5";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem5.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem5.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem5.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre5MouseClicked
 
     private void semestre6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre6MouseClicked
-      semestre6 sem6= new semestre6(this.nombre,this.idUsuario);
-       sem6.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 6";
+    // Código para el evento de abrir el semestre 7
+semestre6 sem6 = new semestre6(this.nombre, this.idUsuario);
+String semestre = "semestre 6";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem6.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem6.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem6.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
+
     }//GEN-LAST:event_semestre6MouseClicked
 
     private void semestre7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre7MouseClicked
-        semestre7 sem7= new semestre7(this.nombre,this.idUsuario);
-       sem7.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 7";
+         // Código para el evento de abrir el semestre 7
+semestre7 sem7 = new semestre7(this.nombre, this.idUsuario);
+String semestre = "semestre 7";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem7.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem7.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem7.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
+
     }//GEN-LAST:event_semestre7MouseClicked
 
     private void semestre8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre8MouseClicked
-        semestre8 sem8= new semestre8(this.nombre,this.idUsuario);
-       sem8.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 8";
+       semestre8 sem8 = new semestre8(this.nombre, this.idUsuario);
+String semestre = "semestre 8";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem8.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem8.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem8.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre8MouseClicked
 
     private void semestre9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_semestre9MouseClicked
-       semestre9 sem9= new semestre9(this.nombre,this.idUsuario);
-       sem9.setVisible(true);
-       this.setVisible(false);
-       String semestre = "semestre 9";
+      semestre9 sem9 = new semestre9(this.nombre, this.idUsuario);
+String semestre = "semestre 9";
 
-// Consulta SQL para insertar datos (el autoincremento en la tabla estudiante no aplica, ya que estás usando el mismo id de registro)
-String sql = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+// Consulta SQL para verificar si el semestre ya está registrado
+String sqlCheck = "SELECT semestre FROM estudiante WHERE idEstudiante = ?";
 
 try {
-    // Obtén la conexión a la base de datos
     Connection con = conexion.obtenerconexion();
-    PreparedStatement ps = con.prepareStatement(sql);
+    PreparedStatement psCheck = con.prepareStatement(sqlCheck);
     
-    // Establece los valores en el PreparedStatement
-    ps.setString(1, semestre);          // Coloca el semestre
-    ps.setInt(2, idUsuario);            // Coloca el id del usuario (ya tienes este valor)
+    // Establece el valor de idEstudiante en el PreparedStatement para la verificación
+    psCheck.setInt(1, idUsuario);
+
+    // Ejecuta la consulta de verificación
+    ResultSet rs = psCheck.executeQuery();
     
-    // Ejecuta la inserción
-    int filasAfectadas = ps.executeUpdate();
-    
-    // Verifica si se insertaron datos
-    if (filasAfectadas > 0) {
-        JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+    if (rs.next()) {
+        String semestreRegistrado = rs.getString("semestre"); // Obtiene el semestre registrado
+
+        // Si el semestre registrado es el mismo que el semestre actual
+        if (semestre.equals(semestreRegistrado)) {
+            // Abre directamente el semestre 7
+            sem9.setVisible(true);
+            this.setVisible(false);
+        } else {
+            // Si el semestre es diferente, pregunta si desea ver las materias de otro semestre
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "Tienes registrado el " + semestreRegistrado + ". ¿Deseas revisar las materias de " + semestre + "?",
+                    "Confirmación", 
+                    JOptionPane.YES_NO_OPTION);
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+                // El usuario aceptó ver las materias de semestre 7, muestra la ventana sin insertar
+                sem9.setVisible(true);
+                this.setVisible(false);
+            }
+        }
     } else {
-        JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        // Si no hay ningún semestre registrado para este usuario, inserta el semestre actual
+        String sqlInsert = "INSERT INTO estudiante (semestre, idEstudiante) VALUES (?, ?)";
+        PreparedStatement psInsert = con.prepareStatement(sqlInsert);
+        psInsert.setString(1, semestre);
+        psInsert.setInt(2, idUsuario);
+
+        int filasAfectadas = psInsert.executeUpdate();
+
+        if (filasAfectadas > 0) {
+            JOptionPane.showMessageDialog(this, "Datos insertados correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se insertaron datos.");
+        }
+
+        // Muestra la ventana del semestre 7
+        sem9.setVisible(true);
+        this.setVisible(false);
+
+        psInsert.close();
     }
 
-    // Cierra los recursos
-    ps.close();
+    // Cierra los recursos de verificación
+    psCheck.close();
+    rs.close();
     con.close();
 
-} catch (SQLIntegrityConstraintViolationException e) {
-    // Captura la excepción de restricción de integridad
-    JOptionPane.showMessageDialog(this, "Ya tienes un semestre registrado.", "Error", JOptionPane.ERROR_MESSAGE);
 } catch (SQLException e) {
     e.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error al insertar datos: " + e.getMessage());
+    JOptionPane.showMessageDialog(this, "Error al verificar o insertar datos: " + e.getMessage());
 }
     }//GEN-LAST:event_semestre9MouseClicked
 
@@ -816,6 +1103,10 @@ try {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -826,6 +1117,7 @@ try {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
