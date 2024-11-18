@@ -4,6 +4,12 @@
  */
 package com.inicio;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author maico
@@ -228,6 +234,11 @@ public class semestre3 extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/ususario.jpg"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -307,13 +318,12 @@ public class semestre3 extends javax.swing.JFrame {
                                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(71, 71, 71))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(81, 81, 81)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,6 +429,49 @@ public class semestre3 extends javax.swing.JFrame {
         ventanaAlumno.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+     try {
+        // Obtener la conexión usando tu clase 'conexion'
+        Connection conn = conexion.obtenerconexion();
+
+        if (conn != null) {
+            // Consulta SQL para obtener los datos del usuario logueado
+            String sql = "SELECT nombreUsuario, apellidoUsuario, correoUsuario, Usuario, Rol FROM registro WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            // Supongamos que ya tienes el ID del usuario logueado
+            stmt.setInt(1, this.idUsuario); // Método para obtener el ID del usuario logueado
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Extraer los datos del usuario de la consulta
+                String nombre = rs.getString("nombreUsuario");
+                String apellido = rs.getString("apellidoUsuario");
+                String correo = rs.getString("correoUsuario");
+                String usuario = rs.getString("Usuario");
+                String rol = rs.getString("Rol");
+
+                // Crear el JFrame y pasarle los datos
+                PerfilUsuarioFrame perfilFrame = new PerfilUsuarioFrame(nombre, apellido, correo, usuario, rol);
+                perfilFrame.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontraron datos para el usuario.");
+            }
+
+            // Cerrar conexiones
+            rs.close();
+            stmt.close();
+            conn.close();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos.");
+        }
+    } catch (SQLException ex) {
+       
+        JOptionPane.showMessageDialog(this, "Error al obtener los datos del usuario: " + ex.getMessage());
+    }
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     
 

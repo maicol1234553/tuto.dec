@@ -319,6 +319,11 @@ public class alumno extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/ususario.jpg"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -459,6 +464,11 @@ public class alumno extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Roboto Black", 3, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("VER MIS TUTORIAS");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1317,6 +1327,55 @@ try {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+       try {
+        // Obtener la conexión usando tu clase 'conexion'
+        Connection conn = conexion.obtenerconexion();
+
+        if (conn != null) {
+            // Consulta SQL para obtener los datos del usuario logueado
+            String sql = "SELECT nombreUsuario, apellidoUsuario, correoUsuario, Usuario, Rol FROM registro WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            // Supongamos que ya tienes el ID del usuario logueado
+            stmt.setInt(1, this.idUsuario); // Método para obtener el ID del usuario logueado
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Extraer los datos del usuario de la consulta
+                String nombre = rs.getString("nombreUsuario");
+                String apellido = rs.getString("apellidoUsuario");
+                String correo = rs.getString("correoUsuario");
+                String usuario = rs.getString("Usuario");
+                String rol = rs.getString("Rol");
+
+                // Crear el JFrame y pasarle los datos
+                PerfilUsuarioFrame perfilFrame = new PerfilUsuarioFrame(nombre, apellido, correo, usuario, rol);
+                perfilFrame.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontraron datos para el usuario.");
+            }
+
+            // Cerrar conexiones
+            rs.close();
+            stmt.close();
+            conn.close();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos.");
+        }
+    } catch (SQLException ex) {
+       
+        JOptionPane.showMessageDialog(this, "Error al obtener los datos del usuario: " + ex.getMessage());
+    }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+         TutoriasAlumnoFrame tuto = new TutoriasAlumnoFrame (this.idUsuario,this.nombre);
+        tuto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel9MouseClicked
 
     /**
      * @param args the command line arguments

@@ -10,8 +10,7 @@ import java.awt.event.ActionListener;
 public class escogerPro extends javax.swing.JFrame {
     private JTable table;
     private JButton btnRegistrarTutoria; // boton registrar tutoria
-    private JButton btnSubirComentario; // boton subir comentario
-    private JButton btnVolver;//boton voolver
+    private JButton btnVolver; //boton volver
     private JButton btnVerComentarios; // Nuevo botón para ver comentarios
     private JTextArea txtComentario;  // Área de texto para el comentario
     private int idUsuario;
@@ -71,9 +70,8 @@ public class escogerPro extends javax.swing.JFrame {
         btnRegistrarTutoria.setForeground(Color.WHITE); // Color de texto blanco
         btnRegistrarTutoria.setFocusPainted(false); // Sin borde al hacer foco
         buttonPanel.add(btnRegistrarTutoria); // Añadir el botón al panel
-
         // Botón de subir comentario
-        btnSubirComentario = new JButton("Subir Comentario");
+        JButton btnSubirComentario = new JButton("Subir Comentario");
         btnSubirComentario.setBackground(new Color(33, 150, 243)); // Color azul
         btnSubirComentario.setForeground(Color.WHITE); // Color de texto blanco
         btnSubirComentario.setFocusPainted(false); // Sin borde al hacer foco
@@ -212,44 +210,62 @@ public class escogerPro extends javax.swing.JFrame {
     }
 
     // Método para ver los comentarios del profesor seleccionado
-    private void verComentarios() {
-        int selectedRow = table.getSelectedRow();
-        if (selectedRow != -1) {
-            int idProfesor = (int) table.getValueAt(selectedRow, 0);
+  private void verComentarios() {
+    int selectedRow = table.getSelectedRow();
+    if (selectedRow != -1) {
+        int idProfesor = (int) table.getValueAt(selectedRow, 0);
 
-            String sql = "SELECT c.comentario " +
-                         "FROM comentarios c " +
-                         "JOIN tutoria t ON c.idTutoria = t.idTutoria " +
-                         "WHERE t.idProfesor = ?";
+        // Consulta para obtener todos los comentarios del profesor seleccionado
+        String sql = "SELECT c.comentario " +
+                     "FROM comentarios c " +
+                     "JOIN tutoria t ON c.idTutoria = t.idTutoria " +
+                     "WHERE t.idProfesor = ?";
 
-            try (Connection con = conexion.obtenerconexion();
-                 PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = conexion.obtenerconexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
 
-                ps.setInt(1, idProfesor);
-                ResultSet rs = ps.executeQuery();
+            ps.setInt(1, idProfesor);
+            ResultSet rs = ps.executeQuery();
 
-                StringBuilder comentarios = new StringBuilder();
-                int contador = 1;  // Variable para numerar los comentarios
-                while (rs.next()) {
-                    comentarios.append("Comentario ").append(contador).append(":\n")
-                               .append(rs.getString("comentario")).append("\n\n"); // Espacio adicional entre comentarios
-                    contador++; // Incrementar el contador
-                }
-
-                if (comentarios.length() > 0) {
-                    JOptionPane.showMessageDialog(this, comentarios.toString(), "Comentarios del Profesor", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "No hay comentarios disponibles para este profesor.");
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Error al obtener los comentarios: " + e.getMessage());
+            // Crear un StringBuilder para almacenar todos los comentarios
+            StringBuilder comentarios = new StringBuilder();
+            int contador = 1; // Variable para numerar los comentarios
+            while (rs.next()) {
+                comentarios.append("Comentario ").append(contador).append(":\n")
+                           .append(rs.getString("comentario")).append("\n\n"); // Espacio adicional entre comentarios
+                contador++; // Incrementar el contador
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para ver los comentarios.");
+
+            // Crear un nuevo JFrame para mostrar los comentarios
+            JFrame comentariosFrame = new JFrame("Comentarios del Profesor");
+            comentariosFrame.setSize(400, 300); // Tamaño del JFrame
+            comentariosFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Cerrar solo esta ventana
+            comentariosFrame.setLocationRelativeTo(this); // Centrar respecto a la ventana actual
+
+            // Crear un JTextArea para mostrar los comentarios
+            JTextArea textArea = new JTextArea();
+            textArea.setText(comentarios.toString());
+            textArea.setEditable(false); // Hacer que el JTextArea sea de solo lectura
+            textArea.setLineWrap(true); // Habilitar el ajuste de línea
+            textArea.setWrapStyleWord(true); // Ajustar líneas por palabras
+
+            // Agregar el JTextArea dentro de un JScrollPane
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+            // Añadir el JScrollPane al JFrame
+            comentariosFrame.add(scrollPane);
+            comentariosFrame.setVisible(true);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al obtener los comentarios: " + e.getMessage());
         }
+    } else {
+        JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para ver los comentarios.");
     }
+}
+
 
     // Método para obtener el id de la materia seleccionada
     private int obtenerIdMateria(String materia) {
@@ -276,3 +292,4 @@ public class escogerPro extends javax.swing.JFrame {
         alum.setVisible(true); // Suponiendo que tienes una clase llamada AlumnoVentana
     }
 }
+

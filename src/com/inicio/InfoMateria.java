@@ -4,6 +4,8 @@
  */
 package com.inicio;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -109,6 +111,11 @@ public class InfoMateria extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/ususario.jpg"))); // NOI18N
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Segoe Print", 3, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -304,6 +311,50 @@ if (materiaTexto.isEmpty()) {
      dispose();
      
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+         try {
+        // Obtener la conexión usando tu clase 'conexion'
+        Connection conn = conexion.obtenerconexion();
+
+        if (conn != null) {
+            // Consulta SQL para obtener los datos del usuario logueado
+            String sql = "SELECT nombreUsuario, apellidoUsuario, correoUsuario, Usuario, Rol FROM registro WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            // Supongamos que ya tienes el ID del usuario logueado
+            stmt.setInt(1, this.idUsuario); // Método para obtener el ID del usuario logueado
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Extraer los datos del usuario de la consulta
+                String nombre = rs.getString("nombreUsuario");
+                String apellido = rs.getString("apellidoUsuario");
+                String correo = rs.getString("correoUsuario");
+                String usuario = rs.getString("Usuario");
+                String rol = rs.getString("Rol");
+
+                // Crear el JFrame y pasarle los datos
+                PerfilUsuarioFrame perfilFrame = new PerfilUsuarioFrame(nombre, apellido, correo, usuario, rol);
+                perfilFrame.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontraron datos para el usuario.");
+            }
+
+            // Cerrar conexiones
+            rs.close();
+            stmt.close();
+            conn.close();
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos.");
+        }
+    } catch (SQLException ex) {
+       
+        JOptionPane.showMessageDialog(this, "Error al obtener los datos del usuario: " + ex.getMessage());
+    }
+
+    }//GEN-LAST:event_jLabel9MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
