@@ -4,15 +4,12 @@ import java.sql.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class escogerPro extends javax.swing.JFrame {
     private JTable table;
-    private JButton btnRegistrarTutoria; // boton registrar tutoria
-    private JButton btnVolver; //boton volver
-    private JButton btnVerComentarios; // Nuevo botón para ver comentarios
-    private JTextArea txtComentario;  // Área de texto para el comentario
+    private JButton btnRegistrarTutoria; // Botón registrar tutoría
+    private JButton btnVolver; // Botón volver
+    private JButton btnVerComentarios; // Botón para ver comentarios
     private int idUsuario;
     private String nombre;
     private String materiaSeleccionada;
@@ -50,34 +47,34 @@ public class escogerPro extends javax.swing.JFrame {
         JScrollPane tableScrollPane = new JScrollPane(table);
         tableScrollPane.setBorder(BorderFactory.createTitledBorder("Lista de Profesores"));
         panel.add(tableScrollPane);
-
-        // Área para escribir un comentario
-        JLabel comentarioLabel = new JLabel("Comentario sobre el docente:");
-        panel.add(comentarioLabel);
         
-        txtComentario = new JTextArea(4, 20); 
-        JScrollPane commentScrollPane = new JScrollPane(txtComentario);
-        panel.add(commentScrollPane);
+        
 
         // Panel para los botones (ubicación inferior)
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10)); // Alinear a la izquierda y espaciado
         panel.add(buttonPanel);
+        // Botón de ver info para el estudiante
+        JButton btnVerInfoEstudiante = new JButton("Ver Info Estudiante");
+        btnVerInfoEstudiante.setBackground(new Color(33, 150, 243)); // Color azul
+        btnVerInfoEstudiante.setForeground(Color.WHITE); // Color de texto blanco
+        btnVerInfoEstudiante.setFocusPainted(false); // Sin borde al hacer foco
+        buttonPanel.add(btnVerInfoEstudiante); // Añadir el botón al panel
 
+        
+        JButton btnVerInfoMateria = new JButton("Ver Info Materia");
+        btnVerInfoMateria.setBackground(new Color(33, 150, 243)); // Color azul
+        btnVerInfoMateria.setForeground(Color.WHITE); // Color de texto blanco
+        btnVerInfoMateria.setFocusPainted(false); // Sin borde al hacer foco
+        buttonPanel.add(btnVerInfoMateria); // Añadir el botón al panel
         // Botón de registrar tutoría
         btnRegistrarTutoria = new JButton("Registrar Tutoría");
         btnRegistrarTutoria.setBackground(new Color(76, 175, 80)); // Color verde
         btnRegistrarTutoria.setForeground(Color.WHITE); // Color de texto blanco
         btnRegistrarTutoria.setFocusPainted(false); // Sin borde al hacer foco
         buttonPanel.add(btnRegistrarTutoria); // Añadir el botón al panel
-        // Botón de subir comentario
-        JButton btnSubirComentario = new JButton("Subir Comentario");
-        btnSubirComentario.setBackground(new Color(33, 150, 243)); // Color azul
-        btnSubirComentario.setForeground(Color.WHITE); // Color de texto blanco
-        btnSubirComentario.setFocusPainted(false); // Sin borde al hacer foco
-        buttonPanel.add(btnSubirComentario); // Añadir el botón al panel
 
-        // Nuevo botón para ver los comentarios
+        // Botón de ver comentarios
         btnVerComentarios = new JButton("Ver Comentarios");
         btnVerComentarios.setBackground(new Color(255, 193, 7)); // Color amarillo
         btnVerComentarios.setForeground(Color.WHITE); // Color de texto blanco
@@ -96,9 +93,12 @@ public class escogerPro extends javax.swing.JFrame {
 
         // Acción del botón de registrar tutoría
         btnRegistrarTutoria.addActionListener(e -> registrarTutoria());
+        
+        btnVerInfoMateria.addActionListener(e -> mostrarInfoMateria());
+        
+        btnVerInfoEstudiante.addActionListener(e -> mostrarInfoEstudiante());
 
-        // Acción del botón de subir comentario
-        btnSubirComentario.addActionListener(e -> subirComentario());
+
 
         // Acción del botón de ver comentarios
         btnVerComentarios.addActionListener(e -> verComentarios());
@@ -109,7 +109,7 @@ public class escogerPro extends javax.swing.JFrame {
         String sql = "SELECT p.idProfesor, r.nombreUsuario, r.correoUsuario, " +
                      "p.DescripcionP, m.nombreMateria, m.descripcionMateria " +
                      "FROM profesor p " +
-                     "JOIN registro r ON p.idProfesor = r.id " +  
+                     "JOIN registro r ON p.idProfesor = r.id " +
                      "JOIN materias_profesor mp ON p.idProfesor = mp.idProfesor " +
                      "JOIN materias m ON mp.idMateria = m.idMateria " +
                      "WHERE m.nombreMateria = ?";
@@ -124,13 +124,13 @@ public class escogerPro extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "No se encontraron profesores para la materia seleccionada.");
             } else {
                 do {
-                    model.addRow(new Object[] {
-                        rs.getInt("idProfesor"),  
-                        rs.getString("nombreUsuario"),  
-                        rs.getString("correoUsuario"),  
-                        rs.getString("DescripcionP"),  
-                        rs.getString("nombreMateria"),  
-                        rs.getString("descripcionMateria")  
+                    model.addRow(new Object[]{
+                        rs.getInt("idProfesor"),
+                        rs.getString("nombreUsuario"),
+                        rs.getString("correoUsuario"),
+                        rs.getString("DescripcionP"),
+                        rs.getString("nombreMateria"),
+                        rs.getString("descripcionMateria")
                     });
                 } while (rs.next());
             }
@@ -141,6 +141,84 @@ public class escogerPro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al cargar datos: " + e.getMessage());
         }
     }
+    
+    // Método para mostrar la información completa de la materia
+private void mostrarInfoMateria() {
+    String sql = "SELECT descripcionMateria FROM materias WHERE nombreMateria = ?";
+    try (Connection con = conexion.obtenerconexion();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        ps.setString(1, materiaSeleccionada); // Usamos materiaSeleccionada para obtener la información de la materia
+        ResultSet rs = ps.executeQuery();
+        
+        if (rs.next()) {
+            String descripcionMateria = rs.getString("descripcionMateria");
+            
+            // Crear un JFrame para mostrar la descripción de la materia
+            JFrame infoMateriaFrame = new JFrame("Descripción de la Materia");
+            infoMateriaFrame.setSize(400, 300);
+            infoMateriaFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            infoMateriaFrame.setLocationRelativeTo(this);
+            
+            // Crear un JTextArea para mostrar la descripción
+            JTextArea textArea = new JTextArea();
+            textArea.setText("Descripción de la Materia:\n" + descripcionMateria);
+            textArea.setEditable(false); // Hacerlo solo de lectura
+            textArea.setLineWrap(true);
+            textArea.setWrapStyleWord(true);
+            
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            infoMateriaFrame.add(scrollPane);
+            infoMateriaFrame.setVisible(true);
+        }
+        
+    } catch (SQLException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error al obtener la información de la materia: " + e.getMessage());
+    }
+}
+// Método para mostrar la información para el estudiante (descripción del profesor)
+private void mostrarInfoEstudiante() {
+    int selectedRow = table.getSelectedRow(); // Obtener la fila seleccionada en la tabla
+    if (selectedRow != -1) {
+        int idProfesor = (int) table.getValueAt(selectedRow, 0); // Obtener el ID del profesor seleccionado
+
+        String sql = "SELECT DescripcionP FROM profesor WHERE idProfesor = ?";
+        try (Connection con = conexion.obtenerconexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, idProfesor); // Consultar la descripción del profesor seleccionado
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String descripcionProfesor = rs.getString("DescripcionP");
+
+                // Crear un JFrame para mostrar la información del profesor
+                JFrame infoProfesorFrame = new JFrame("Información para el Estudiante");
+                infoProfesorFrame.setSize(400, 300);
+                infoProfesorFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                infoProfesorFrame.setLocationRelativeTo(this);
+
+                // Crear un JTextArea para mostrar la descripción del profesor
+                JTextArea textArea = new JTextArea();
+                textArea.setText("Información para el Estudiante:\n" + descripcionProfesor);
+                textArea.setEditable(false); // Hacerlo solo de lectura
+                textArea.setLineWrap(true);
+                textArea.setWrapStyleWord(true);
+
+                JScrollPane scrollPane = new JScrollPane(textArea);
+                infoProfesorFrame.add(scrollPane);
+                infoProfesorFrame.setVisible(true);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al obtener la información del profesor: " + e.getMessage());
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para ver su información.");
+    }
+}
+
 
     // Método para registrar la tutoría
     private void registrarTutoria() {
@@ -153,10 +231,9 @@ public class escogerPro extends javax.swing.JFrame {
             try (Connection con = conexion.obtenerconexion();
                  PreparedStatement psTutoria = con.prepareStatement(sqlTutoria)) {
 
-                // Registrar tutoría
                 psTutoria.setInt(1, idUsuario);
                 psTutoria.setInt(2, idProfesor);
-                psTutoria.setInt(3, idMateria);  // Usar el idMateria
+                psTutoria.setInt(3, idMateria);
                 int rowsAffectedTutoria = psTutoria.executeUpdate();
 
                 if (rowsAffectedTutoria > 0) {
@@ -174,98 +251,55 @@ public class escogerPro extends javax.swing.JFrame {
         }
     }
 
-    // Método para subir un comentario sobre el docente
-    private void subirComentario() {
-        String comentario = txtComentario.getText().trim(); // Obtener el comentario del área de texto
-
-        if (comentario.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, escribe un comentario sobre el docente.");
-            return;
-        }
-
+    // Método para ver los comentarios del profesor seleccionado
+    private void verComentarios() {
         int selectedRow = table.getSelectedRow();
         if (selectedRow != -1) {
             int idProfesor = (int) table.getValueAt(selectedRow, 0);
-            int idMateria = obtenerIdMateria(materiaSeleccionada); // Obtener el id de la materia
 
-            String sqlComentario = "INSERT INTO comentarios (idTutoria, comentario) VALUES ((SELECT MAX(idTutoria) FROM tutoria), ?)";
-
+            String sql = "SELECT c.comentario " +
+                         "FROM comentarios c " +
+                         "JOIN tutoria t ON c.idTutoria = t.idTutoria " +
+                         "WHERE t.idProfesor = ?";
             try (Connection con = conexion.obtenerconexion();
-                 PreparedStatement psComentario = con.prepareStatement(sqlComentario)) {
+                 PreparedStatement ps = con.prepareStatement(sql)) {
 
-                // Subir comentario
-                psComentario.setString(1, comentario);
-                psComentario.executeUpdate();
+                ps.setInt(1, idProfesor);
+                ResultSet rs = ps.executeQuery();
 
-                JOptionPane.showMessageDialog(this, "Comentario añadido con éxito.");
-                txtComentario.setText(""); // Limpiar el área de texto después de subir el comentario
+                StringBuilder comentarios = new StringBuilder();
+                int contador = 1;
+                while (rs.next()) {
+                    comentarios.append("Comentario ").append(contador).append(":\n")
+                               .append(rs.getString("comentario")).append("\n\n");
+                    contador++;
+                }
+
+                JFrame comentariosFrame = new JFrame("Comentarios del Profesor");
+                comentariosFrame.setSize(400, 300);
+                comentariosFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                comentariosFrame.setLocationRelativeTo(this);
+
+                JTextArea textArea = new JTextArea();
+                textArea.setText(comentarios.toString());
+                textArea.setEditable(false);
+                textArea.setLineWrap(true);
+                textArea.setWrapStyleWord(true);
+
+                JScrollPane scrollPane = new JScrollPane(textArea);
+                scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+                comentariosFrame.add(scrollPane);
+                comentariosFrame.setVisible(true);
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(this, "Error al subir comentario: " + e.getMessage());
+                JOptionPane.showMessageDialog(this, "Error al obtener los comentarios: " + e.getMessage());
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para añadir el comentario.");
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para ver los comentarios.");
         }
     }
-
-    // Método para ver los comentarios del profesor seleccionado
-  private void verComentarios() {
-    int selectedRow = table.getSelectedRow();
-    if (selectedRow != -1) {
-        int idProfesor = (int) table.getValueAt(selectedRow, 0);
-
-        // Consulta para obtener todos los comentarios del profesor seleccionado
-        String sql = "SELECT c.comentario " +
-                     "FROM comentarios c " +
-                     "JOIN tutoria t ON c.idTutoria = t.idTutoria " +
-                     "WHERE t.idProfesor = ?";
-
-        try (Connection con = conexion.obtenerconexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-
-            ps.setInt(1, idProfesor);
-            ResultSet rs = ps.executeQuery();
-
-            // Crear un StringBuilder para almacenar todos los comentarios
-            StringBuilder comentarios = new StringBuilder();
-            int contador = 1; // Variable para numerar los comentarios
-            while (rs.next()) {
-                comentarios.append("Comentario ").append(contador).append(":\n")
-                           .append(rs.getString("comentario")).append("\n\n"); // Espacio adicional entre comentarios
-                contador++; // Incrementar el contador
-            }
-
-            // Crear un nuevo JFrame para mostrar los comentarios
-            JFrame comentariosFrame = new JFrame("Comentarios del Profesor");
-            comentariosFrame.setSize(400, 300); // Tamaño del JFrame
-            comentariosFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Cerrar solo esta ventana
-            comentariosFrame.setLocationRelativeTo(this); // Centrar respecto a la ventana actual
-
-            // Crear un JTextArea para mostrar los comentarios
-            JTextArea textArea = new JTextArea();
-            textArea.setText(comentarios.toString());
-            textArea.setEditable(false); // Hacer que el JTextArea sea de solo lectura
-            textArea.setLineWrap(true); // Habilitar el ajuste de línea
-            textArea.setWrapStyleWord(true); // Ajustar líneas por palabras
-
-            // Agregar el JTextArea dentro de un JScrollPane
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-
-            // Añadir el JScrollPane al JFrame
-            comentariosFrame.add(scrollPane);
-            comentariosFrame.setVisible(true);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Error al obtener los comentarios: " + e.getMessage());
-        }
-    } else {
-        JOptionPane.showMessageDialog(this, "Por favor, selecciona un profesor para ver los comentarios.");
-    }
-}
-
 
     // Método para obtener el id de la materia seleccionada
     private int obtenerIdMateria(String materia) {
@@ -289,7 +323,8 @@ public class escogerPro extends javax.swing.JFrame {
     private void volverALaVentanaAlumno() {
         this.setVisible(false);
         alumno alum = new alumno(this.nombre, this.idUsuario);
-        alum.setVisible(true); // Suponiendo que tienes una clase llamada AlumnoVentana
+        alum.setVisible(true);
     }
 }
+
 

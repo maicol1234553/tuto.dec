@@ -1372,7 +1372,7 @@ try {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-         TutoriasAlumnoFrame tuto = new TutoriasAlumnoFrame (this.idUsuario,this.nombre);
+        TutoriasAlumnoFrame tuto = new TutoriasAlumnoFrame (this.idUsuario,this.nombre);
         tuto.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel9MouseClicked
