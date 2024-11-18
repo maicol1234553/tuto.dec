@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class escogerPro extends javax.swing.JFrame {
     private JTable table;
-    private JButton btnRegistrarTutoria;
-    private JButton btnSubirComentario;
-    private JButton btnVolver;
+    private JButton btnRegistrarTutoria; // boton registrar tutoria
+    private JButton btnSubirComentario; // boton subir comentario
+    private JButton btnVolver;//boton voolver
     private JButton btnVerComentarios; // Nuevo botón para ver comentarios
     private JTextArea txtComentario;  // Área de texto para el comentario
     private int idUsuario;
@@ -56,7 +56,7 @@ public class escogerPro extends javax.swing.JFrame {
         JLabel comentarioLabel = new JLabel("Comentario sobre el docente:");
         panel.add(comentarioLabel);
         
-        txtComentario = new JTextArea(4, 20); // 4 filas y 20 columnas para el área de texto
+        txtComentario = new JTextArea(4, 20); 
         JScrollPane commentScrollPane = new JScrollPane(txtComentario);
         panel.add(commentScrollPane);
 
@@ -272,6 +272,7 @@ public class escogerPro extends javax.swing.JFrame {
     // Método para volver a la ventana anterior (de estudiantes)
     private void volverALaVentanaAlumno() {
         this.setVisible(false);
-       // new AlumnoVentana(idUsuario).setVisible(true); // Suponiendo que tienes una clase llamada AlumnoVentana
+        alumno alum = new alumno(this.nombre, this.idUsuario);
+        alum.setVisible(true); // Suponiendo que tienes una clase llamada AlumnoVentana
     }
 }
